@@ -1,0 +1,61 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+#import <Availability.h>
+#import "UIView+Toast.h"
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#define device [UIDevice currentDevice]
+//#define KstrCurrentID [[device identifierForVendor]UUIDString]
+//#define NSLog
+
+#pragma Server
+//#define API_PATH @"http://peerdevelopment.com/apps/tracmojo/web/api/"
+
+#pragma Local
+//#define API_PATH @"http://192.168.1.101/tracmojo/web/api/"
+#pragma Amazon
+
+#define API_PATH @"http://54.153.145.178/backend/web/api/"
+
+// final 2 url Ritesh
+//#define API_PATH @"http://opensource.zealousys.com/backend/web/api/"
+//#define API_PATH @"http://app.tracmojo.com/backend/web/api/"
+
+#define paased_color [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:0.7]
+#define TWITTER_CONSUMER_KEY @"emp9JMh1dMrF6060c1muLfiYk"
+#define TWITTER_SECRET_KEY @"pSMctANAdVqTpgnn1M1dLrXRkWXKG8q551UgR812yoA9kx8xyE"
+#define Font_Roboto(SIZE)[UIFont fontWithName:@"Roboto-Regular" size:SIZE]
+#define Font_Roboto_Italic(SIZE)[UIFont fontWithName:@"Roboto-Italic" size:SIZE]
+#define Font_Roboto_Bold(SIZE)[UIFont fontWithName:@"Roboto-Bold" size:SIZE]
+#define Font_Roboto_Light(SIZE)[UIFont fontWithName:@"Roboto-Light" size:SIZE]
+#define Font_Roboto_Medium(SIZE)[UIFont fontWithName:@"Roboto-Medium" size:SIZE]
+#define Font_Roboto_LightItalic(SIZE)[UIFont fontWithName:@"Roboto-LightItalic" size:SIZE]
+
+
+// GooglePlus Project ID : durable-limiter-89606
+// GooglePlus Client  ID : 190883321122-hnvbe8gmededmjo2brtfd0gle2reqd7q.apps.googleusercontent.com
+// GooglePlus Secret key : jXa7mv-q35VP4SI-b1P0W7fz
+
+
+//Consumer Key (API Key)	    DJZMzBDMyLuhZkfBdygmmJmmW
+//Consumer Secret (API Secret)	cgFzqu9uet4F4MpzKGXqFSPwXZYrdcQSpILAxbeZov7T8VVjbO
+//Access Token                  3004924772-xehYTBIuPt8mTzHI5zwq0i50qY8dsg1rWzESkpu
+//Access Token Secret           EneR4Sb4dBIE3CKpvhvRMfYB7r776YGrrcFwBbR9fr0md
+
+
+
+
+#ifdef __OBJC__
+#import "AppDelegate.h"
+#define DELEGATE ((AppDelegate*)[[UIApplication sharedApplication]delegate])
+#define FONT_Bold(SIZE)[UIFont fontWithName:@"DINPro-Regular" size:SIZE]
+//#define API_PATH [NSString stringWithFormat:@"http://192.168.1.100/apps/tracmojo/web/api/user/"]
+
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
