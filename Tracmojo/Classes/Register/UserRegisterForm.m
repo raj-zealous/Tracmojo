@@ -17,7 +17,7 @@
 
 @interface UserRegisterForm ()
 {
-     NSMutableString *combinedText;
+    NSMutableString *combinedText;
     NSString*strcode;
 }
 @end
@@ -457,8 +457,6 @@
             [[NSUserDefaults standardUserDefaults] synchronize];
             
             DELEGATE.email=[NSString stringWithFormat:@"%@",[[result valueForKey:@"User"]valueForKey:@"email_id"]];
-            
-            //
             
             UIAlertView *myalert=[[UIAlertView alloc]initWithTitle:nil message:[NSString stringWithFormat:@"%@",[result objectForKey:@"message"]] delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
             myalert.tag=101;
