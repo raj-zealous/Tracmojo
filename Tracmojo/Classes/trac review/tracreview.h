@@ -22,7 +22,9 @@
     IBOutlet UIScrollView *scroll_popup;
     IBOutlet UIView *sub_view;
      SLComposeViewController *slComposerSheet;
+    IBOutlet NSLayoutConstraint *headerViewMinHightConst;
     
+    IBOutlet NSLayoutConstraint *lblGoleTopConst;
     IBOutlet UILabel *lbl_tractype,*lblnext,*lbltractodate;
     
         IBOutlet UILabel *lbl_dates;
@@ -61,7 +63,9 @@
     IBOutlet UIButton *btn_cancel;
     IBOutlet UIButton *btn_Message,*btnmcal;
     IBOutlet UITextField *txt_message;
+    IBOutlet UIView *viewHeader;
     
+    IBOutlet NSLayoutConstraint *btnBusnessNameHightConst;
     IBOutlet UIView *graph_view;
     IBOutlet UIImageView *i8;
     

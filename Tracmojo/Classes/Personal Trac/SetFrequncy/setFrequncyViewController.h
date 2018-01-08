@@ -23,11 +23,16 @@
     UIDatePicker *datePicker;
 }
 @property(strong,nonatomic)IBOutlet UIButton *btnBack;
+@property (strong, nonatomic) IBOutlet UIImageView *imgViewAs;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *lblSetFrequancyHightConst;
+
+
 @property(strong,nonatomic)IBOutlet UIButton *btnNext;
 @property(strong,nonatomic)IBOutlet UILabel *lbl_ref,*lblb;
 @property(strong,nonatomic) NSString *str_ref_name,*str_tracname;
 
 
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *lblFinishonTopContant;
 
 @property(strong,nonatomic)IBOutlet UILabel *lblOn;
 @property(strong,nonatomic)IBOutlet UIImageView *imgv_bg,*imgv_move,*error2,*erro1;

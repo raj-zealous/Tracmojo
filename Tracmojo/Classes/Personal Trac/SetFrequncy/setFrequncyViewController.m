@@ -24,8 +24,10 @@
 
 - (void)viewDidLoad {
     
-    
-    
+//    pickerView_as.delegate = self;
+//    txt_as.delegate  =  self;
+ txt_as.inputView   = pickerView_as;
+//
     [self showas];
     [self showon];
     //[self showDatePicker];
@@ -57,6 +59,7 @@
                 txt_on.text=@"";
             }
             else
+                
             {
                 txt_on.text=[NSString stringWithFormat:@"%@",[DELEGATE.dic_edittrac objectForKey:@"rating_day"]];
             }
@@ -92,16 +95,17 @@
             txt_on.hidden=YES;
             _erro1.hidden=YES;
             
+            _lblFinishonTopContant.constant  =  - 70;
+            self.view.needsUpdateConstraints;
+            
+//            txt_finishingon.frame=CGRectMake(txt_finishingon.frame.origin.x,214, txt_finishingon.frame.size.width, txt_finishingon.frame.size.height);
+//
+//            _lblb.frame=CGRectMake(_lblb.frame.origin.x,185.0, _lblb.frame.size.width, _lblb.frame.size.height);
+//
+//            _imgv_move.frame=CGRectMake(_imgv_move.frame.origin.x,206.0, _imgv_move.frame.size.width, _imgv_move.frame.size.height);
             
             
-            txt_finishingon.frame=CGRectMake(txt_finishingon.frame.origin.x,214, txt_finishingon.frame.size.width, txt_finishingon.frame.size.height);
-            
-            _lblb.frame=CGRectMake(_lblb.frame.origin.x,185.0, _lblb.frame.size.width, _lblb.frame.size.height);
-            
-            _imgv_move.frame=CGRectMake(_imgv_move.frame.origin.x,206.0, _imgv_move.frame.size.width, _imgv_move.frame.size.height);
-            
-            
-            _error2.frame=CGRectMake(_error2.frame.origin.x,221.0, _error2.frame.size.width, _error2.frame.size.height);
+//            _error2.frame=CGRectMake(_error2.frame.origin.x,221.0, _error2.frame.size.width, _error2.frame.size.height);
             
             
             
@@ -169,14 +173,9 @@
     }
     scroll_frequncy.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width,350);
     
-    
-    
-    
     UIPickerView *pickerView=[[UIPickerView alloc]init];
     [pickerView setBackgroundColor:[UIColor whiteColor]];
     pickerView.delegate=self;
-    
-    
     
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     df.dateFormat = @"dd-MM-yyyy";
@@ -221,8 +220,8 @@
     //  NSDate *endDate = [calendar dateByAddingComponents:components
     //                                              toDate:startDate
     //                                             options:0];
-    
-    datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height-300, self.view.bounds.size.width, 300)];
+    datePicker = [[UIDatePicker alloc] init];
+    //datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height-300, self.view.bounds.size.width, 300)];
     
     datePicker.datePickerMode = UIDatePickerModeDate;
     datePicker.backgroundColor=[UIColor whiteColor];
@@ -247,6 +246,8 @@
         
         if ([txt_as.text isEqualToString:@"Weekly"])
         {
+            _lblFinishonTopContant.constant = 11 ;
+            self.view.needsUpdateConstraints;
             NSDate *todayDate = [NSDate date];
             NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
             [dateComponents setDay:+7];
@@ -257,6 +258,8 @@
             
         {
             
+            _lblFinishonTopContant.constant = 11 ;
+            self.view.needsUpdateConstraints;
             NSDate *todayDate = [NSDate date];
             NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
             [dateComponents setDay:+14];
@@ -271,7 +274,8 @@
         if ([txt_as.text isEqualToString:@"Monthly"])
             
         {
-            
+            _lblFinishonTopContant.constant = 11 ;
+            self.view.needsUpdateConstraints;
             NSDate *todayDate = [NSDate date];
             NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
             [dateComponents setDay:+30];
@@ -326,12 +330,16 @@
     {
         _lbl_ref.text=_str_ref_name;
         txt_showtitle.text= _str_tracname;
-        
-        
     }
     else
     {
         _lbl_ref.hidden=YES;
+        if ((_lbl_ref.hidden = YES))
+        {
+            _lblSetFrequancyHightConst.constant  = 0 ;
+            self.view.needsUpdateConstraints;
+        }
+        
         //NSLog(@"%@",DELEGATE.dic_addPersonaltrac);
         if ([[DELEGATE.dic_addPersonaltrac objectForKey:@"idea_flag"]isEqualToString:@"N"])
         {
@@ -502,14 +510,15 @@
     
     // df.dateStyle = NSDateFormatterMediumStyle;
     
-    pickerView_as = [[UIPickerView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height-300, self.view.bounds.size.width, 300)];
+    pickerView_as = [[UIPickerView alloc] init];
+    //pickerView_as = [[UIPickerView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height-300, self.view.bounds.size.width, 300)];
     pickerView_as.delegate=self;
     pickerView_as.dataSource=self;
     pickerView_as.backgroundColor=[UIColor whiteColor];
     pickerView_as.hidden = NO;
     
     UIToolbar *myToolbar = [[UIToolbar alloc] initWithFrame:
-                            CGRectMake(0,0, 320, 44)]; //should code with variables to support view resizing
+                            CGRectMake(0,0, self.view.frame.size.width, 44)]; //should code with variables to support view resizing
     myToolbar.barStyle = UIBarStyleBlackOpaque;
     [myToolbar sizeToFit];
     UIBarButtonItem *doneButton =
@@ -527,13 +536,14 @@
     
     // df.dateStyle = NSDateFormatterMediumStyle;
     
-    pickerView_on = [[UIPickerView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height-300, self.view.bounds.size.width, 300)];
+    pickerView_on = [[UIPickerView alloc] init];
+    //pickerView_on = [[UIPickerView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height-300, self.view.bounds.size.width, 300)];
     pickerView_on.delegate=self;
     pickerView_on.dataSource=self;
     pickerView_on.backgroundColor=[UIColor whiteColor];
     pickerView_on.hidden = NO;
     UIToolbar *myToolbar = [[UIToolbar alloc] initWithFrame:
-                            CGRectMake(0,0, 320, 44)]; //should code with variables to support view resizing
+                            CGRectMake(0,0, self.view.frame.size.width, 44)]; //should code with variables to support view resizing
     myToolbar.barStyle = UIBarStyleBlackOpaque;
     [myToolbar sizeToFit];
     UIBarButtonItem *doneButton =
@@ -550,6 +560,10 @@
 - (void)showDatePicker {
     
     
+}
+-(void)viewDidLayoutSubviews
+{
+   //[self showas];
 }
 
 -(void)DonefinishingDate:(UITextField*)textfiel
@@ -591,10 +605,10 @@
 
 -(void)inputAccessoryViewDidYearDone:(UITextField*)textfiel
 {
-    
     //[str_as isEqualToString:@"All Weekdays"]
-    
     if ([str_as isEqualToString:@"Daily"] || [str_as isEqualToString:@"All Weekdays"]) {
+        //  self.lblb.frame = CGRectMake(_lblb.frame.origin.x,_lblOn.frame.origin.y,_lblb.frame.size.width, _lblb.frame.size.height);
+        
         _lblOn.hidden=YES;
         _imgv_bg.hidden=YES;
         txt_on.hidden=YES;
@@ -602,20 +616,18 @@
         
         
         
-        txt_finishingon.frame=CGRectMake(txt_finishingon.frame.origin.x,214, txt_finishingon.frame.size.width, txt_finishingon.frame.size.height);
-        
-        _lblb.frame=CGRectMake(_lblb.frame.origin.x,185.0, _lblb.frame.size.width, _lblb.frame.size.height);
-        
-        _imgv_move.frame=CGRectMake(_imgv_move.frame.origin.x,206.0, _imgv_move.frame.size.width, _imgv_move.frame.size.height);
+        _lblFinishonTopContant.constant  = - 70;
+        self.view.needsUpdateConstraints;
         
         
-        _error2.frame=CGRectMake(_error2.frame.origin.x,221.0, _error2.frame.size.width, _error2.frame.size.height);
+//        txt_finishingon.frame=CGRectMake(txt_finishingon.frame.origin.x,214, txt_finishingon.frame.size.width, txt_finishingon.frame.size.height);
+//
+//        _lblb.frame=CGRectMake(_lblb.frame.origin.x,185.0, _lblb.frame.size.width, _lblb.frame.size.height);
+//
+//        _imgv_move.frame=CGRectMake(_imgv_move.frame.origin.x,206.0, _imgv_move.frame.size.width, _imgv_move.frame.size.height);
         
         
-        
-        
-        
-        
+     //   _error2.frame=CGRectMake(_error2.frame.origin.x,221.0, _error2.frame.size.width, _error2.frame.size.height);
     }
     else{
         
@@ -625,6 +637,8 @@
             
         {
             
+            _lblFinishonTopContant.constant = 11 ;
+            self.view.needsUpdateConstraints;
             NSDate *todayDate = [NSDate date];
             NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
             [dateComponents setDay:+7];
@@ -639,7 +653,8 @@
         if ([str_as isEqualToString:@"Fortnightly"])
             
         {
-            
+            _lblFinishonTopContant.constant = 11 ;
+            self.view.needsUpdateConstraints;
             NSDate *todayDate = [NSDate date];
             NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
             [dateComponents setDay:+14];
@@ -655,6 +670,8 @@
             
         {
             
+            _lblFinishonTopContant.constant = 11 ;
+            self.view.needsUpdateConstraints;
             NSDate *todayDate = [NSDate date];
             NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
             [dateComponents setDay:+30];
@@ -665,12 +682,7 @@
             datePicker.minimumDate=afterSevenDays;
             
         }
-        
-        
-        
-        
-        
-        
+   
         _lblOn.hidden=NO;
         _imgv_bg.hidden=NO;
         txt_on.hidden=NO;
@@ -749,18 +761,20 @@
 #pragma 14/4
     if (pickerView_as==pickerView)
     {
-        //        if ([[array_on objectForKey:[NSString stringWithFormat:@"%@",txt_as.text]] count] == 0) {
-        //            txt_on.enabled=YES;
-        //        }
-        //        else
-        //        {
-        //            txt_on.enabled=NO;
-        //
-        //        }
+//                if ([[array_on objectForKey:[NSString stringWithFormat:@"%@",txt_as.text]] count] == 0) {
+//                    txt_on.enabled=YES;
+//                }
+//                else
+//                {
+//                    txt_on.enabled=NO;
+//
+//                }
         
         str_as=[array_as objectAtIndex:row] ;
         
         return [array_as objectAtIndex:row] ;
+        
+        
     }
     else  if (pickerView_on ==pickerView)
     {

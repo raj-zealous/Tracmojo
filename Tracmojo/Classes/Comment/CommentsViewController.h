@@ -21,6 +21,10 @@
     
 }
 @property(nonatomic,retain) IBOutlet UITableView *tbl_obj;
+@property (strong, nonatomic) IBOutlet UIView *viewAdddcomment;
+@property (strong, nonatomic) IBOutlet UILabel *lblsendMail;
+@property (strong, nonatomic) IBOutlet UIView *lblAddComment;
+
 @property(nonatomic,retain) IBOutlet TPKeyboardAvoidingScrollView *scrl_obj;
 @property(nonatomic,retain) IBOutlet UIButton *btn_send;
 @property(nonatomic,retain) IBOutlet UITextView *txtv;

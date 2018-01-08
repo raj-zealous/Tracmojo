@@ -35,13 +35,13 @@
     
 //    track_bg.frame =  CGRectMake(0, track_bg.frame.origin.y, self.view.frame.size.width,track_bg.frame.size.height);
 //    lbl_nofollower.frame = CGRectMake(0,lbl_nofollower.frame.origin.y,self.view.frame.size.width, lbl_nofollower.frame.size.height);
-    table_invitelist.frame = CGRectMake(0,table_invitelist.frame.origin.y, self.view.frame.size.width,200);
+//    table_invitelist.frame = CGRectMake(0,table_invitelist.frame.origin.y, self.view.frame.size.width,200);
     
      if ([[DELEGATE.dic_edittrac valueForKey:@"is_owner_participant"]isEqualToString:@"y"]|| DELEGATE.istemp9) {
         
         DELEGATE.isOwnerP=YES;
      ischeck=YES;
-         btnCheck.frame=CGRectMake(view_invite.frame.size.width-31, 101, 28, 22);
+         //btnCheck.frame=CGRectMake(view_invite.frame.size.width-31, 101, 28, 22);
         [btnCheck setImage:[UIImage imageNamed:@"ticks"] forState:UIControlStateNormal];
      
 
@@ -80,10 +80,7 @@
     int totalcount =  inviteCount - Intstrparticipetedcount;
     NSString* myNewString = [NSString stringWithFormat:@"%d", totalcount];
     lbl_invitecount.text = myNewString;
-    
-    
-    
-    
+  
 }
 else
 {
@@ -98,9 +95,14 @@ else
 }
     
     
-
+    if (inviteCount ==  0)
+    {
+        _mailViewTopConstant.constant  =  -80;
+       // _mailview.frame=CGRectMake(0, lbl_nofollower.frame.origin.y + lbl_nofollower.frame.size.height,self.view.frame.size.width, 108);
+        //    _mailview.frame=CGRectMake(0, lbl_nofollower.frame.origin.y + lbl_nofollower.frame.size.height,self.view.frame.size.width, 108);
+        
+    }
     
-    _mailview.frame=CGRectMake(0, lbl_nofollower.frame.origin.y + lbl_nofollower.frame.size.height,self.view.frame.size.width, 108);
 
        if(DELEGATE.isgroup==NO)
     {
@@ -194,6 +196,11 @@ else
         }
         
         lbl_Add.hidden=YES;
+        if (lbl_Add.hidden ==  YES)
+        {
+            lbl_addHightConstant.constant = - 2;
+            [self.view setNeedsUpdateConstraints];
+        }
     }
     //NSLog(@"%@",DELEGATE.contact_participants);
     
@@ -237,8 +244,8 @@ else
             else
             {
                 lbl_nofollower.hidden=YES;
-                _mailview.frame=CGRectMake(_mailview.frame.origin.x, table_invitelist.frame.origin.y+table_invitelist.frame.size.height,self.view.frame.size.width, _mailview.frame.size.height);
-                [scroll_invite addSubview:_mailview];
+//                _mailview.frame=CGRectMake(_mailview.frame.origin.x, table_invitelist.frame.origin.y+table_invitelist.frame.size.height,self.view.frame.size.width, _mailview.frame.size.height);
+                //[scroll_invite addSubview:_mailview];
                 table_invitelist.hidden=NO;
                 [table_invitelist reloadData];
                 
@@ -257,8 +264,8 @@ else
             else
             {
                 lbl_nofollower.hidden=YES;
-                _mailview.frame=CGRectMake(_mailview.frame.origin.x, table_invitelist.frame.origin.y+table_invitelist.frame.size.height,self.view.frame.size.width, _mailview.frame.size.height);
-                [scroll_invite addSubview:_mailview];
+             //   _mailview.frame=CGRectMake(_mailview.frame.origin.x, table_invitelist.frame.origin.y+table_invitelist.frame.size.height,self.view.frame.size.width, _mailview.frame.size.height);
+              //  [scroll_invite addSubview:_mailview];
                 table_invitelist.hidden=NO;
                 [table_invitelist reloadData];
                 
@@ -981,7 +988,7 @@ else
     if (ischeck) {
         ischeck=NO;
         DELEGATE.isOwnerP=NO;
-        btnCheck.frame=CGRectMake(view_invite.frame.size.width-31, 101, 21, 22);
+       // btnCheck.frame=CGRectMake(view_invite.frame.size.width-31, 101, 21, 22);
         
         [btnCheck setImage:[UIImage imageNamed:@"unticks"] forState:UIControlStateNormal];
         
@@ -989,7 +996,7 @@ else
     else{
         ischeck=YES;
         DELEGATE.isOwnerP=YES;
-        btnCheck.frame=CGRectMake(view_invite.frame.size.width-31, 101, 28, 22);
+       // btnCheck.frame=CGRectMake(view_invite.frame.size.width-31, 101, 28, 22);
         [btnCheck setImage:[UIImage imageNamed:@"ticks"] forState:UIControlStateNormal];
         
     }

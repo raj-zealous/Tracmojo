@@ -25,6 +25,7 @@
 
 @property(strong,nonatomic)IBOutlet UIButton *btnBack;
 @property(strong,nonatomic)IBOutlet UIButton *btnNext;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *mailviewtopCont;
 @property(strong,nonatomic)IBOutlet UIView *mailview;
 @property(nonatomic,retain) NSString *str_add,*str_title;
 @end

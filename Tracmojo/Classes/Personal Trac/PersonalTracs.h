@@ -10,7 +10,7 @@
 #import "ModelClass.h"
 
 
-@interface PersonalTracs : UIViewController<UITextFieldDelegate,UIPickerViewDataSource,UIPickerViewDelegate,UIScrollViewDelegate>
+@interface PersonalTracs : UIViewController<UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,UIScrollViewDelegate>
 {
     ModelClass *mc;
     

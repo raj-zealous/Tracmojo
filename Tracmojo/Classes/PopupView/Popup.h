@@ -17,6 +17,9 @@
 @property(strong,nonatomic)IBOutlet UIButton *btngrouptrac;
 @property (weak, nonatomic) IBOutlet UIButton *btninfo;
 @property (weak, nonatomic) IBOutlet UIButton *btngo;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *alertViewHightConst;
+@property (strong, nonatomic) IBOutlet UIView *allertViewMain;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *mainViewAlertHightCOnst;
 
 @property (weak, nonatomic) IBOutlet UITextField *txtinvitecode;
 

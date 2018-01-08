@@ -242,12 +242,12 @@ static NSString * const kClientId = @"729168122628-4mkmi2ac0n7ptn2ljqhc7nqd2nc0s
     [_txtPassword resignFirstResponder];
     [_txtEmailID resignFirstResponder];
     [_myCustomVIEW setHidden:NO];
-    [self.myCustomVIEW addSubview:_txtEmailID];
+   // [self.myCustomVIEW addSubview:_txtEmailID];
  
-    [self.myCustomVIEW addSubview:_btnEmailView];
-    [self.myCustomVIEW addSubview:_btnSend];
-    [self.myCustomVIEW addSubview:_imgLogo];
-    [self.myCustomVIEW addSubview:_imgVIEW];
+    //[self.myCustomVIEW addSubview:_btnEmailView];
+    //[self.myCustomVIEW addSubview:_btnSend];
+  //  [self.myCustomVIEW addSubview:_imgLogo];
+   // [self.myCustomVIEW addSubview:_imgVIEW];
     [_btnSend setBackgroundColor:[UIColor colorWithRed:0/255.0 green:119.0/255.0 blue:181.0/255.0 alpha:1.0]];
     [_btnSend addTarget:self action:@selector(btnSendEmailClicked:) forControlEvents:UIControlEventTouchUpInside];
 

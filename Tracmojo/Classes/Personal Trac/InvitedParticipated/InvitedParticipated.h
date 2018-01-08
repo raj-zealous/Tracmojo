@@ -13,6 +13,7 @@
     
     IBOutlet UIView *view_invite;
     
+    IBOutlet NSLayoutConstraint *lbl_addHightConstant;
     IBOutlet UIImageView *track_bg;
     IBOutlet TPKeyboardAvoidingScrollView *scroll_invite;
     IBOutlet UITextField *txt_showtitel;
@@ -28,6 +29,7 @@
 @property(strong,nonatomic)IBOutlet UIButton *btnBack;
 @property(strong,nonatomic)IBOutlet UIButton *btnNext;
 @property(strong,nonatomic)IBOutlet UIView *mailview;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *mailViewTopConstant;
 @property(nonatomic,retain) NSString *str_add,*str_title;
 
 -(IBAction)btncheck:(id)sender;

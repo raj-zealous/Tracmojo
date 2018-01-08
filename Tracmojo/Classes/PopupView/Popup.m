@@ -27,6 +27,7 @@
     strInviteCode = self.txtinvitecode.text;
     
     [self.alertView setHidden:true];
+    [self.allertViewMain setHidden:true];
     [self.okExitView setHidden:true];
     [self.okView setHidden:true];
 //    self.alertView.layer.borderColor = [[UIColor colorWithRed:48.0/255.0 green:94.0/255.0 blue:170.0/255.0 alpha:1]CGColor];
@@ -35,6 +36,8 @@
     self.btnOKSuccess.layer.borderColor = [[UIColor colorWithRed:48.0/255.0 green:94.0/255.0 blue:170.0/255.0 alpha:1]CGColor];
     [self.txtinvitecode setDelegate:self];
     [self.hideShowView setHidden:true];
+    _allertViewMain.layer.cornerRadius = 25;
+    _allertViewMain.layer.masksToBounds = true;
     self.alertTextView.textContainerInset = UIEdgeInsetsMake(10, 10, 0,10);
 }
 
@@ -63,8 +66,12 @@
 
 -(IBAction)btngo:(id)sender
 {
+    
     if ([self txtEmailValid])
     {
+        self.mainViewAlertHightCOnst.constant  += 20;
+        
+        
         [self.txtinvitecode resignFirstResponder];
         
         strInviteCode = self.txtinvitecode.text;
@@ -75,15 +82,16 @@
             
         if ([Validate isConnectedToNetwork])
         {
-            
-            [mc Invitation_User:[[NSUserDefaults standardUserDefaults] valueForKey:@"userID"] invite_code:strInviteCode selector:@selector(didgetResponserConfirmTrac:)];
+          [mc Invitation_User:[[NSUserDefaults standardUserDefaults] valueForKey:@"userID"] invite_code:strInviteCode selector:@selector(didgetResponserConfirmTrac:)];
         }
     }
 }
 -(IBAction)btninfo:(id)sender
 {
- 
     [self.okExitView setHidden:true];
+//    _alertViewHightConst.constant =  250;
+    self.allertViewMain.frame  = CGRectMake( self.allertViewMain.frame.origin.x, self.allertViewMain.frame.origin.y, self.allertViewMain.frame.size.width, self.alertView.frame.size.height);
+    self.alertTextView.bounds = self.alertView.bounds;
     [self.okView setHidden:false];
     [self.hideShowView setHidden:false];
     [self.hideShowView setUserInteractionEnabled:false];
@@ -93,6 +101,7 @@
     [self.btngrouptrac setUserInteractionEnabled:false];
     
     [self.alertView setHidden:false];
+    [self.allertViewMain setHidden:false];
     mc=[[ModelClass alloc] init];
     mc.delegate=self;
     
@@ -109,6 +118,7 @@
     
     [self.okView setHidden:true];
     [self.alertView setHidden:true];
+    [self.allertViewMain setHidden:true];
     [self.btnpersonaltrac setUserInteractionEnabled:true];
     [self.btngrouptrac setUserInteractionEnabled:true];
     [self.btngo setUserInteractionEnabled:true];
@@ -128,6 +138,7 @@
     
 
     [self.alertView setHidden:true];
+    [self.allertViewMain setHidden:true];
     [self.btnpersonaltrac setUserInteractionEnabled:true];
     [self.btngrouptrac setUserInteractionEnabled:true];
     
@@ -174,6 +185,7 @@
 - (IBAction)btnExitClicked:(UIButton *)sender
 {
     [self.alertView setHidden:true];
+    [self.allertViewMain setHidden:true];
     [self.btnpersonaltrac setUserInteractionEnabled:true];
     [self.btngrouptrac setUserInteractionEnabled:true];
 }
@@ -226,6 +238,7 @@
         [self.okView setHidden:true];
         [self.okExitView setHidden:false];
         [self.alertView setHidden: false];
+        [self.allertViewMain setHidden:false];
         [self.btnpersonaltrac setUserInteractionEnabled:false];
         [self.btngrouptrac setUserInteractionEnabled:false];
         

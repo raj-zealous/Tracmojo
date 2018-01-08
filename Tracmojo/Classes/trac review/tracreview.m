@@ -72,8 +72,6 @@
     }
     
     CGPoint p = [gesture locationInView:scroll];
-    
-    
     //this is for: from graph swipe is hidden other than graph swipe need to work,so i find point and check if it in graph or not !
     
     if (CGRectContainsPoint(CGRectMake(0,y+50,[UIScreen mainScreen].bounds.size.width,height+5), p)) {
@@ -236,15 +234,17 @@
                 float height =  ceilf([self getSize:[NSString stringWithFormat:@"%@",[[self.trac_offline_dic objectForKey:@"Trac"] objectForKey:@"goal"]]]);
                 if(btnBusinessName.hidden)
                 {
-                    lbl_gole_p.frame=CGRectMake(lbl_gole_p.frame.origin.x, lbl_gole_p.frame.origin.y + 2, [UIScreen mainScreen].bounds.size.width-8, height);
+                    btnBusnessNameHightConst.constant =  2;
+                    self.view.needsUpdateConstraints;
+                   // lbl_gole_p.frame=CGRectMake(lbl_gole_p.frame.origin.x, lbl_gole_p.frame.origin.y + 2, [UIScreen mainScreen].bounds.size.width-8, height);
 
                 }
                 else
                 {
-                    lbl_gole_p.frame=CGRectMake(lbl_gole_p.frame.origin.x, lbl_gole_p.frame.origin.y + 10, [UIScreen mainScreen].bounds.size.width-8, height);
+                    //lbl_gole_p.frame=CGRectMake(lbl_gole_p.frame.origin.x, lbl_gole_p.frame.origin.y + 10, [UIScreen mainScreen].bounds.size.width-8, height);
 
                 }
-                previewImage.frame=CGRectMake(previewImage.frame.origin.x, previewImage.frame.origin.y, previewImage.frame.size.width, height);
+                //previewImage.frame=CGRectMake(previewImage.frame.origin.x, previewImage.frame.origin.y, previewImage.frame.size.width, height);
                 
                 
                 
@@ -257,27 +257,30 @@
                 float height =  ceilf([self getSize:[NSString stringWithFormat:@"%@",[[self.trac_offline_dic objectForKey:@"Trac"] objectForKey:@"goal"]]]);
                 if(btnBusinessName.hidden)
                 {
-                 lbl_gole_p.frame=CGRectMake(lbl_gole_p.frame.origin.x, lbl_gole_p.frame.origin.y + 2, [UIScreen mainScreen].bounds.size.width-8-temp2, height);
+                    btnBusnessNameHightConst.constant =  0 ;
+                    self.view.needsUpdateConstraints;
+                    
+                 //lbl_gole_p.frame=CGRectMake(lbl_gole_p.frame.origin.x, lbl_gole_p.frame.origin.y + 2, [UIScreen mainScreen].bounds.size.width-8-temp2, height);
                 }
                 else
                 {
-                    lbl_gole_p.frame=CGRectMake(lbl_gole_p.frame.origin.x, lbl_gole_p.frame.origin.y + 10, [UIScreen mainScreen].bounds.size.width-8-temp2, height);
+                  //  lbl_gole_p.frame=CGRectMake(lbl_gole_p.frame.origin.x, lbl_gole_p.frame.origin.y + 10, [UIScreen mainScreen].bounds.size.width-8-temp2, height);
  
                 }
-                previewImage.frame=CGRectMake(previewImage.frame.origin.x, previewImage.frame.origin.y, previewImage.frame.size.width, height);
+              //  previewImage.frame=CGRectMake(previewImage.frame.origin.x, previewImage.frame.origin.y, previewImage.frame.size.width, height);
                 
-                view_gole_p.frame=CGRectMake(view_gole_p.frame.origin.x, view_gole_p.frame.origin.y, [UIScreen mainScreen].bounds.size.width-8-temp2,  lbl_gole_p.frame.origin.y+ lbl_gole_p.frame.size.height);
-                graph_view.frame=CGRectMake(graph_view.frame.origin.x, view_gole_p.frame.origin.y +  view_gole_p.frame.size.height, [UIScreen mainScreen].bounds.size.width-temp2, 230);
+              //  view_gole_p.frame=CGRectMake(view_gole_p.frame.origin.x, view_gole_p.frame.origin.y, [UIScreen mainScreen].bounds.size.width-8-temp2,  lbl_gole_p.frame.origin.y+ lbl_gole_p.frame.size.height);
+//                graph_view.frame=CGRectMake(graph_view.frame.origin.x, view_gole_p.frame.origin.y +  view_gole_p.frame.size.height, [UIScreen mainScreen].bounds.size.width-temp2, 230);
                 
-                sub_view.frame=CGRectMake(sub_view.frame.origin.x, graph_view.frame.origin.y +10+  graph_view.frame.size.height, [UIScreen mainScreen].bounds.size.width-temp2,  sub_view.frame.origin.y+ sub_view.frame.size.height);
+                //sub_view.frame=CGRectMake(sub_view.frame.origin.x, graph_view.frame.origin.y +10+  graph_view.frame.size.height, [UIScreen mainScreen].bounds.size.width-temp2,  sub_view.frame.origin.y+ sub_view.frame.size.height);
             }
             else{
                 
-                view_gole_p.frame=CGRectMake(view_gole_p.frame.origin.x, view_gole_p.frame.origin.y, [UIScreen mainScreen].bounds.size.width-8,  lbl_gole_p.frame.origin.y+ lbl_gole_p.frame.size.height);
+               // view_gole_p.frame=CGRectMake(view_gole_p.frame.origin.x, view_gole_p.frame.origin.y, [UIScreen mainScreen].bounds.size.width-8,  lbl_gole_p.frame.origin.y+ lbl_gole_p.frame.size.height);
                 
-                graph_view.frame=CGRectMake(graph_view.frame.origin.x, view_gole_p.frame.origin.y +  view_gole_p.frame.size.height, [UIScreen mainScreen].bounds.size.width,  230);
+               // graph_view.frame=CGRectMake(graph_view.frame.origin.x, view_gole_p.frame.origin.y +  view_gole_p.frame.size.height, [UIScreen mainScreen].bounds.size.width,  230);
                 
-                sub_view.frame=CGRectMake(sub_view.frame.origin.x, graph_view.frame.origin.y +10+  graph_view.frame.size.height, [UIScreen mainScreen].bounds.size.width,  sub_view.frame.origin.y+ sub_view.frame.size.height);
+               // sub_view.frame=CGRectMake(sub_view.frame.origin.x, graph_view.frame.origin.y +10+  graph_view.frame.size.height, [UIScreen mainScreen].bounds.size.width,  sub_view.frame.origin.y+ sub_view.frame.size.height);
             }
             
             [self.view bringSubviewToFront:sub_view];
@@ -380,20 +383,23 @@
                 temp2=57;
                 
                 
+
+                
                 lbl_detail_g.frame=CGRectMake(lbl_detail_g.frame.origin.x, lbl_gole_g.frame.origin.y+lbl_gole_g.frame.size.height, [UIScreen mainScreen].bounds.size.width-8, height);
-                previewImage.frame=CGRectMake(previewImage.frame.origin.x, previewImage.frame.origin.y, previewImage.frame.size.width, height+lbl_gole_g.frame.size.height+lbl_gole_g.frame.size.height);
-                view_gole_g.frame=CGRectMake(view_gole_g.frame.origin.x, view_gole_g.frame.origin.y, [UIScreen mainScreen].bounds.size.width-8-temp2,  lbl_detail_g.frame.origin.y+ lbl_detail_g.frame.size.height);
-                graph_view.frame=CGRectMake(graph_view.frame.origin.x, view_gole_g.frame.origin.y +  view_gole_g.frame.size.height, [UIScreen mainScreen].bounds.size.width-temp2,  230);
-                sub_view.frame=CGRectMake(sub_view.frame.origin.x, graph_view.frame.origin.y + 10+ graph_view.frame.size.height, [UIScreen mainScreen].bounds.size.width-temp2,  sub_view.frame.origin.y+ sub_view.frame.size.height);
+                //previewImage.frame=CGRectMake(previewImage.frame.origin.x, previewImage.frame.origin.y, previewImage.frame.size.width, height+lbl_gole_g.frame.size.height+lbl_gole_g.frame.size.height);
+              //  view_gole_g.frame=CGRectMake(view_gole_g.frame.origin.x, view_gole_g.frame.origin.y, [UIScreen mainScreen].bounds.size.width-8-temp2,  lbl_detail_g.frame.origin.y+ lbl_detail_g.frame.size.height);
+               // graph_view.frame=CGRectMake(graph_view.frame.origin.x, view_gole_g.frame.origin.y +  view_gole_g.frame.size.height, [UIScreen mainScreen].bounds.size.width-temp2,  230);
+                //sub_view.frame=CGRectMake(sub_view.frame.origin.x, graph_view.frame.origin.y + 10+ graph_view.frame.size.height, [UIScreen mainScreen].bounds.size.width-temp2,  sub_view.frame.origin.y+ sub_view.frame.size.height);
             }
             else{
                 lbl_detail_g.frame=CGRectMake(lbl_detail_g.frame.origin.x, lbl_gole_g.frame.origin.y+lbl_gole_g.frame.size.height, [UIScreen mainScreen].bounds.size.width-8, height);
                 
-                previewImage.frame=CGRectMake(previewImage.frame.origin.x, previewImage.frame.origin.y, previewImage.frame.size.width, height+lbl_gole_g.frame.size.height+lbl_gole_g.frame.size.height);
+               //
+                //previewImage.frame=CGRectMake(previewImage.frame.origin.x, previewImage.frame.origin.y, previewImage.frame.size.width, height+lbl_gole_g.frame.size.height+lbl_gole_g.frame.size.height);
                 
-                view_gole_g.frame=CGRectMake(view_gole_g.frame.origin.x, view_gole_g.frame.origin.y, [UIScreen mainScreen].bounds.size.width-8,  lbl_detail_g.frame.origin.y+ lbl_detail_g.frame.size.height);
-                graph_view.frame=CGRectMake(graph_view.frame.origin.x, view_gole_g.frame.origin.y +  view_gole_g.frame.size.height, [UIScreen mainScreen].bounds.size.width, 230);
-                sub_view.frame=CGRectMake(sub_view.frame.origin.x, graph_view.frame.origin.y + 10+ graph_view.frame.size.height, [UIScreen mainScreen].bounds.size.width,  sub_view.frame.origin.y+ sub_view.frame.size.height);
+                //view_gole_g.frame=CGRectMake(view_gole_g.frame.origin.x, view_gole_g.frame.origin.y, [UIScreen mainScreen].bounds.size.width-8,  lbl_detail_g.frame.origin.y+ lbl_detail_g.frame.size.height);
+               // graph_view.frame=CGRectMake(graph_view.frame.origin.x, view_gole_g.frame.origin.y +  view_gole_g.frame.size.height, [UIScreen mainScreen].bounds.size.width, 230);
+               // sub_view.frame=CGRectMake(sub_view.frame.origin.x, graph_view.frame.origin.y + 10+ graph_view.frame.size.height, [UIScreen mainScreen].bounds.size.width,  sub_view.frame.origin.y+ sub_view.frame.size.height);
             }
             
             NSString *string = [NSString stringWithFormat:@"%@",[[self.trac_offline_dic objectForKey:@"Trac"] objectForKey:@"goal"]];
@@ -480,10 +486,7 @@
         //   [mc detailstrac:@"173" tracid:@"669" selector:@selector(details:)];
         
         //   [mc detailstrac:@"3" tracid:@"15" selector:@selector(details:)];
-        
-        
-        
-        
+
         [mc detailstrac:[[NSUserDefaults standardUserDefaults] valueForKey:@"userID"] tracid:self.trac_id selector:@selector(details:)];
     }
     else{
@@ -679,7 +682,7 @@
             int val = [str intValue];
             // int val = 48;
             int mainTemp;
-
+//
             if (val==0) {
                 mainTemp =0;
             }
@@ -819,6 +822,7 @@
 }
 -(void)viewWillAppear:(BOOL)animated
 {
+    DELEGATE.p_emailArray.removeAllObjects;
     
     
         if (![DELEGATE.contact_participants count]==0)
@@ -910,9 +914,7 @@
 }
 -(void)didgetResponserSelectedTrac:(NSDictionary*)dic
 {
-    
-    //uncomment thiis
-    
+
     NSLog(@"Value of track. = %@", DELEGATE.isTrac);
 
     if ([DELEGATE.isTrac isEqualToString:@"F"]) {
@@ -1028,7 +1030,10 @@
                 
                 if(btnBusinessName.hidden)
                 {
-                    lbl_gole_p.frame=CGRectMake(lbl_gole_p.frame.origin.x, view_gole_p.frame.origin.y , [UIScreen mainScreen].bounds.size.width-8, height+22);
+                    
+                    btnBusnessNameHightConst.constant =  0 ;
+                    self.view.needsUpdateConstraints;
+                    //lbl_gole_p.frame=CGRectMake(lbl_gole_p.frame.origin.x, view_gole_p.frame.origin.y , [UIScreen mainScreen].bounds.size.width-8, height+22);
 
                 }
                 else
@@ -1036,23 +1041,23 @@
                      // lbl_gole_p.frame=CGRectMake(lbl_gole_p.frame.origin.x, view_gole_p.frame.origin.y + 10 , [UIScreen mainScreen].bounds.size.width-8, height+22);
                     
                     // changes by me
-                      lbl_gole_p.frame=CGRectMake(lbl_gole_p.frame.origin.x, view_gole_p.frame.origin.y + 10, [UIScreen mainScreen].bounds.size.width-8, height+22);
+                      //lbl_gole_p.frame=CGRectMake(lbl_gole_p.frame.origin.x, view_gole_p.frame.origin.y + 10, [UIScreen mainScreen].bounds.size.width-8, height+22);
                 }
                
                 
-                previewImage.frame=CGRectMake(previewImage.frame.origin.x, previewImage.frame.origin.y, previewImage.frame.size.width, height+20);
+              //  previewImage.frame=CGRectMake(previewImage.frame.origin.x, previewImage.frame.origin.y, previewImage.frame.size.width, height+20);
 
                 
 
-                view_gole_p.frame=CGRectMake(view_gole_p.frame.origin.x, view_gole_p.frame.origin.y, [UIScreen mainScreen].bounds.size.width-8,  lbl_gole_p.frame.origin.y+ lbl_gole_p.frame.size.height);
+              //  view_gole_p.frame=CGRectMake(view_gole_p.frame.origin.x, view_gole_p.frame.origin.y, [UIScreen mainScreen].bounds.size.width-8,  lbl_gole_p.frame.origin.y+ lbl_gole_p.frame.size.height);
               
-                graph_view.frame=CGRectMake(graph_view.frame.origin.x, view_gole_p.frame.origin.y +  view_gole_p.frame.size.height, [UIScreen mainScreen].bounds.size.width,  230);
+               // graph_view.frame=CGRectMake(graph_view.frame.origin.x, viewHeader.frame.origin.y + viewHeader.frame.size.height , [UIScreen mainScreen].bounds.size.width,  230);
                 
                 
                 graph_view.backgroundColor = [UIColor whiteColor];
                 
                 
-                sub_view.frame=CGRectMake(sub_view.frame.origin.x, graph_view.frame.origin.y+10 +  graph_view.frame.size.height+10 , [UIScreen mainScreen].bounds.size.width, sub_view.frame.size.height);
+               // sub_view.frame=CGRectMake(sub_view.frame.origin.x, graph_view.frame.origin.y+10 +  graph_view.frame.size.height+10 , [UIScreen mainScreen].bounds.size.width, sub_view.frame.size.height);
                 
                 
                 if ([[[self.trac_detail_dic objectForKey:@"Trac"] objectForKey:@"goal"] isEqualToString:@""]) {
@@ -1162,22 +1167,34 @@
                 
                 float height =  ceilf([self getSize:[NSString stringWithFormat:@"%@",[[self.trac_detail_dic objectForKey:@"Trac"] objectForKey:@"goal"]]]);
                 
-                lbl_detail_g.frame=CGRectMake(lbl_detail_g.frame.origin.x, lbl_gole_g.frame.origin.y+lbl_gole_g.frame.size.height, [UIScreen mainScreen].bounds.size.width-8, height);
+                if (height > 25)
+                {
+                    headerViewMinHightConst.constant = 72;
+                    //lbl_detail_g.frame=CGRectMake(lbl_detail_g.frame.origin.x, (lbl_gole_g.frame.origin.y+lbl_gole_g.frame.size.height) - 20 , [UIScreen mainScreen].bounds.size.width-8, height);
+                 //   graph_view.frame = CGRectMake(graph_view.frame.origin.x,viewHeader.frame.origin.y +viewHeader.frame.size.height, graph_view.frame.size.width, 230);
+                    
+                }
+                else
+                {
+//               lbl_detail_g.frame=CGRectMake(lbl_detail_g.frame.origin.x, lbl_gole_g.frame.origin.y+lbl_gole_g.frame.size.height , [UIScreen mainScreen].bounds.size.width-8, height);
+                }
                 
-                previewImage.frame=CGRectMake(previewImage.frame.origin.x, previewImage.frame.origin.y, previewImage.frame.size.width, height+lbl_gole_g.frame.size.height+9);
                 
                 
-                view_gole_p.frame=CGRectMake(view_gole_p.frame.origin.x, view_gole_p.frame.origin.y, [UIScreen mainScreen].bounds.size.width-8,  lbl_gole_p.frame.origin.y+ lbl_gole_p.frame.size.height);
+                //previewImage.frame=CGRectMake(previewImage.frame.origin.x, previewImage.frame.origin.y, previewImage.frame.size.width, height+lbl_gole_g.frame.size.height+9);
+                
+                
+                //view_gole_p.frame=CGRectMake(view_gole_p.frame.origin.x, view_gole_p.frame.origin.y, [UIScreen mainScreen].bounds.size.width-8,  lbl_gole_p.frame.origin.y+ lbl_gole_p.frame.size.height);
                 
                 // view_gole_g.frame=CGRectMake(view_gole_g.frame.origin.x, lbl_detail_g.frame.origin.y+lbl_detail_g.frame.size.height, [UIScreen mainScreen].bounds.size.width-8,  lbl_detail_g.frame.origin.y+ lbl_detail_g.frame.size.height);
                 
                 
                 //abrez
                 
-                view_gole_g.frame=CGRectMake(view_gole_g.frame.origin.x, view_gole_g.frame.origin.y, [UIScreen mainScreen].bounds.size.width-8,  lbl_detail_g.frame.origin.y+ lbl_detail_g.frame.size.height+7);
+                //view_gole_g.frame=CGRectMake(view_gole_g.frame.origin.x, view_gole_g.frame.origin.y, [UIScreen mainScreen].bounds.size.width-8,  lbl_detail_g.frame.origin.y+ lbl_detail_g.frame.size.height+7);
                 
                 
-                graph_view.frame=CGRectMake(graph_view.frame.origin.x, view_gole_g.frame.origin.y +  view_gole_g.frame.size.height, [UIScreen mainScreen].bounds.size.width,  230);
+                //graph_view.frame=CGRectMake(graph_vƒiew.frame.origin.x, view_gole_g.frame.origin.y +  view_gole_g.frame.size.height, [UIScreen mainScreen].bounds.size.width,  230);
                 graph_view.backgroundColor = [UIColor whiteColor];
                 
                 
@@ -1187,7 +1204,7 @@
                 if (   DELEGATE. isyPlus==NO) {
                        DELEGATE. isyPlus=YES;
                     
-                       sub_view.frame=CGRectMake(sub_view.frame.origin.x, graph_view.frame.origin.y +10+  graph_view.frame.size.height, [UIScreen mainScreen].bounds.size.width,  sub_view.frame.origin.y+ sub_view.frame.size.height);
+                  //  sub_view.frame=CGRectMake(sub_view.frame.origin.x, graph_view.frame.origin.y +10+  graph_view.frame.size.height, [UIScreen mainScreen].bounds.size.width,  sub_view.frame.origin.y+ sub_view.frame.size.height);
                 }
                 
                 NSString *string = [NSString stringWithFormat:@"%@",[[self.trac_detail_dic objectForKey:@"Trac"] objectForKey:@"group_name"]];
@@ -1753,8 +1770,10 @@
             CommentsViewController *comment=[[CommentsViewController alloc] initWithNibName:@"CommentsViewController" bundle:nil];
             comment.trac_id=[[self.trac_detail_dic objectForKey:@"Trac"] objectForKey:@"id"];
             comment.isOwner=false;
-            
+        
             [self.navigationController pushViewController:comment animated:YES];
+            
+            
 //            UIAlertView *alt=[[UIAlertView alloc] initWithTitle:nil message:@"You are not owner of this trac. You can not view comment" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
 //            [alt show];
         }
@@ -1768,24 +1787,15 @@
         //        [alt show];
     }
 }
-
-
 -(IBAction)touch_help:(id)sender
 {
-    
-    
-    
     [self.navigationController popViewControllerAnimated:YES];
-    
-    
 }
 -(IBAction)touch_notification:(id)sender
 {
     if ([lbl_group_followers.text isEqualToString:@"0 followers"] && [lbl_participated.text isEqualToString:@"0 participants"] ) {
         [self.view makeToast:@"No participants or follower found!"];
     }
-
-    
     else{
         if (DELEGATE.isAvaiable) {
             
@@ -1812,7 +1822,7 @@
             [self.view makeToast:@"Please check your internet connection"];
             
             //        UIAlertView *alt=[[UIAlertView alloc] initWithTitle:nil message:@"Please check your internet connection" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-            //        [alt show];
+            //        [alt showsawas/aSaSas;
         }
     }
 }
@@ -1979,90 +1989,25 @@
     //create  new charts
     
     CGRect rect = CGRectMake(0, -5, [UIScreen mainScreen].bounds.size.width  ,  259+5);
-    chartView.frame= rect;
+    chartView.frame = rect;
     [graph_view bringSubviewToFront:chartView];
     
     graph_view.clipsToBounds = NO;
 
-//====================================
-
-
-//    xAxis.axi = 24;
-
-
-
-//======================================
-//    if ([DELEGATE.isTrac isEqualToString:@"G"])
-//    {
-//    
-//    chartView.delegate = self;
-//    //chartView.xAxis.valueFormatter = self;
-//
-//    chartView.descriptionText = @"";
-// //   chartView.noDataTextDescription = @"You need to provide data for the chart.";
-//    
-//    chartView.drawGridBackgroundEnabled = NO;
-//    chartView.drawBarShadowEnabled = NO;
-//    
-//    chartView.backgroundColor = [UIColor clearColor];
-//    chartView.drawValueAboveBarEnabled = NO;
-//    chartView.drawBordersEnabled = NO;
-//   // chartView.drawHighlightArrowEnabled = NO;
-//    
-//    [chartView setScaleEnabled:YES];
-//    chartView.drawMarkers = NO;
-// //   chartView.highlightEnabled = NO;///disable click on charts
-//    chartView.scaleYEnabled = NO;///remove scale Y
-//        chartView.drawOrder = @[
-//                                @(CombinedChartDrawOrderBar),
-//                                @(CombinedChartDrawOrderLine),
-//                                ];
-//    
-//    ChartYAxis *rightAxis = chartView.rightAxis;
-//    rightAxis.drawGridLinesEnabled = NO;
-//    rightAxis.axisMinimum = 0.0; // this replaces startAtZero = YES
-//    chartView.rightAxis.enabled = NO;//remove right column charst
-//    
-//    
-//    ChartYAxis *leftAxis = chartView.leftAxis;
-//    leftAxis.drawGridLinesEnabled = NO;
-//    leftAxis.axisMinimum = 0.0; // this replaces startAtZero = YES
-//    leftAxis.enabled = NO;
-//    leftAxis.labelCount = 4;
-////    leftAxis._customAxisMax = 5.01;
-////    leftAxis._customAxisMin = 1.0;
-////    leftAxis.axisMinimum = 0.0;
-////    leftAxis.labelCount = 4;
-//    
-//    ChartXAxis *xAxis = chartView.xAxis;
-//    xAxis.labelPosition = XAxisLabelPositionBottom;
-//    xAxis.drawAxisLineEnabled = NO;
-//    xAxis.drawGridLinesEnabled = NO;
-//    xAxis.drawLimitLinesBehindDataEnabled = NO;
-//    xAxis.avoidFirstLastClippingEnabled = false;
-//    xAxis.axisMinimum = 0.0; //
-//        xAxis.valueFormatter = self;
-//        xAxis.avoidFirstLastClippingEnabled = false;
-//    }
-//    else
-    {
-
         chartView.delegate = self;
         //    chartView.descriptionText = @"";
         //chartView.noDataTextDescription = @"You need to provide data for the chart.";
-        chartView.noDataText = @"You need to provide data for the chart."; //for new version on chart 3.0
-
+        chartView.noDataText = @"\t   No chart data Available.\nYou need to provide data for the chart."; //for new version on chart 3.0
+        chartView.noDataTextColor =  [UIColor colorWithRed:255.0/255.0 green:0.0 blue:0.0 alpha:0.25];
         chartView.backgroundColor = [UIColor clearColor];
         chartView.chartDescription.enabled = NO;
         chartView.drawValueAboveBarEnabled = NO;
         chartView.drawBordersEnabled = NO;
-
         chartView.descriptionTextAlign = NSTextAlignmentCenter;
-
         chartView.drawGridBackgroundEnabled = NO;
         chartView.drawBarShadowEnabled = NO;
-        chartView.highlightPerTapEnabled = false; // tap karva thi line of x and y axis ni dekhade aa band karva mate
-        chartView.highlightPerDragEnabled = false;// drag karva thi line of x and y axis ni dekhade aa band karva mate
+//        chartView.highlightPerTapEnabled = false; // tap karva thi line of x and y axis ni dekhade aa band karva mate
+//        chartView.highlightPerDragEnabled = false;// drag karva thi line of x and y axis ni dekhade aa band karva mate
 
         //extra thing as per before added here
         chartView.drawValueAboveBarEnabled = NO;
@@ -2074,6 +2019,7 @@
         chartView.drawOrder = @[
                                 @(CombinedChartDrawOrderBar),
                                 @(CombinedChartDrawOrderLine),
+
                                 ];
 
 //            ChartLegend *l = chartView.legend;
@@ -2085,17 +2031,15 @@
 
         ChartYAxis *rightAxis = chartView.rightAxis;
         rightAxis.drawGridLinesEnabled = NO;
-//        rightAxis.axisMinimum = 0.0; // this replaces startAtZero = YES
+//        rightAxis._customAxisMax = 5.00;
+//        rightAxis._customAxisMin = 1.00;
+//        rightAxis.axisRa nge = 1;
         rightAxis.enabled = NO; // graph ma display na thay atle rightside bar
-
 
         ChartYAxis *leftAxis = chartView.leftAxis;
         leftAxis.drawGridLinesEnabled = NO;
         leftAxis.axisMinimum = 0.0; // this replaces startAtZero = YES
         leftAxis.enabled = NO; // graph ma display na thay atle
-       // leftAxis._customAxisMax = 5.01;
-       // leftAxis._customAxisMin = 1.0;
-//            leftAxis.labelCount = 4;
 
         ChartXAxis *xAxis = chartView.xAxis;
         xAxis.labelPosition = XAxisLabelPositionBottom;
@@ -2106,17 +2050,10 @@
         xAxis.drawLimitLinesBehindDataEnabled = NO;
         [xAxis setGranularityEnabled:YES];
         [xAxis setGranularity:1.0];
-//        xAxis.avoidFirstLastClippingEnabled = true;
         xAxis.valueFormatter = self;
-       // xAxis.avoidFirstLastClippingEnabled = true;
 
-//        let yAxisValueFormatter = NSNumberFormatter()
-//        yAxisValueFormatter.usesSignificantDigits = true  // This will tell the formatter to display the decimal places
-//        xAxis.valueFormatter = yAxisValueFormatter
-//        xAxis.wordWrapEnabled = true;
-//        [xAxis setLabelCount:0 force:true];
 
-    }
+
     ////  calculate ITEM_COUNT
     if ([type isEqualToString:@"Daily"]||[type isEqualToString:@"All Weekdays"])
     {
@@ -2126,7 +2063,7 @@
     {
         [self fornightgraphfrompicker];
     }
-    
+
     /////this is for weekly graph////
     if ([type isEqualToString:@"Weekly"])
     {
@@ -2136,7 +2073,7 @@
     {
         [self monthlyfrompicker];
     }
-    
+
     ///end config ITEM_COUNT
     [chartView clear];
 
@@ -2253,12 +2190,7 @@
         if ([DELEGATE.isTrac isEqualToString:@"P"]||[DELEGATE.isTrac isEqualToString:@"F"])
         {
             data.lineData = [self generateLineDataFORPERSONAL];
-            chartView.xAxis.axisMaximum = data.xMax + 0.25;
-//            chartView.xAxis.axisMinimum = data.xMin - 0.5;
-
-        }
-        else
-        {
+        }else {
             [self processDataBarChart];
 
             if(patricipantsArray.count > 0)
@@ -2269,54 +2201,17 @@
             //display center ma karva mate aa use kari yu che bar chart ma point niche na center ma dekhay che ne  ee
             chartView.xAxis.axisMaximum = data.xMax + 0.5;
             chartView.xAxis.axisMinimum = data.xMin - 0.5;
-
-//            [chartView.xAxis setLabelCount:ITEM_COUNT force:true];
-//            chartView.xAxis.isCenterAxisLabelsEnabled
-//            chartView.xAxis.valueFormatter = self;
-////            chartView.xAxis.axisMaximum = data.xMax  + 1;
-//            chartView.xAxis.isCenterAxisLabelsEnabled = true;
-
         }
-//        data.barData = [self generateBarData12];
-//        data.bubbleData = [self generateBubbleData];
-//        data.scatterData = [self generateScatterData];
-//        data.candleData = [self generateCandleData];
-//
+//        chartView.leftAxis.startAtZeroEnabled = NO;
+//        chartView.rightAxis.startAtZeroEnabled = NO;
+//        chartView.rightAxis._customAxisMax = 5;
+//        chartView.rightAxis._customAxisMin = 0.0; // this replaces startAtZero = YES
+//        chartView.rightAxis.axisMinValue = 0.0;
+//        chartView.rightAxis.axisMaxValue = 5.0;
         chartView.data = data;
-        // SET UP X-AXIS
-         //chartView.xAxis.axisMaximum = Double(xVals.count - 1);
-      //  chartView.xAxis.valueFormatter = self;//IndexAxisValueFormatter(values: self.chartLabels)
-         //axisLabelModulus
-//        chartView.xAxis.avoidFirstLastClippingEnabled = flase;
-//        print("NOWAK: CHART LABELS THO - \(self.chartLabels)")
-//        return;
-    //        CombinedChartData *data = [[CombinedChartData alloc] initWithXVals:xVals];
-
-        //Need to check
-        
-        ///check personal track or group track
-//        if ([DELEGATE.isTrac isEqualToString:@"P"]||[DELEGATE.isTrac isEqualToString:@"F"])
-//        {
-//            data.lineData = [self generateLineDataFORPERSONAL];
-//        }
-//        else
-//        {
-//            
-//            [self processDataBarChart];
-//            
-//            if(patricipantsArray.count > 0)
-//                data.lineData = [self generateLineData1];
-//            if(percentagerates.count > 0)
-//                data.barData = [self generateBarData12];
-//            
-//        }
-        //data.bubbleData = [self generateBubbleData];
-        //data.scatterData = [self generateScatterData];
-        //data.candleData = [self generateCandleData];
-
         [chartView setHidden:NO];
         
-    }
+    }                                                      
     else
     {
         //hide charst when empty data
@@ -2504,21 +2399,25 @@
                 {
                     //// //// ////NSLog(@"%@",temp );(@"%@",patriDisplayArray);
                     float val = [[[patricipantsArray objectAtIndex:i] valueForKey:@"rate"]floatValue] ;
+                    NSLog(@"valu is :%2.2f",val);
+
                     NSString *index;
                     index= [NSString stringWithFormat:@"%d",i+1];
 
                     NSInteger numberIndex = [self addValuetoIndex:index]-1;
+                    NSLog(@"numberIndex is  genrarrrrrrr:%ld",(long)numberIndex);
+
                     if (val!= 0)
                         if (numberIndex >= 0)
                         {
-                            [values addObject:[[ChartDataEntry alloc] initWithX: numberIndex y:val-1]];
+                            [values addObject:[[ChartDataEntry alloc] initWithX: numberIndex y:val]];
                         }
 
                 }
 
                 if (values.count >0)
                 {
-                    LineChartDataSet *d = [[LineChartDataSet alloc] initWithValues:values label:[NSString stringWithFormat:@""]];
+                    LineChartDataSet *d = [[LineChartDataSet alloc] initWithValues:values label:Nil];
                     d.lineWidth = 1.0f;
                     d.circleRadius = 2.5f;
                     d.drawValuesEnabled = NO;
@@ -2555,14 +2454,12 @@
     return data;
 }
 
-
 - (LineChartData *)generateLineDataFORPERSONAL
-
 {
     xVals = [[NSMutableArray alloc] init];
     
     dataSets = [[NSMutableArray alloc] init];
-    for (int i = 0; i < [displayarray count]; i++)
+    for (int i = 0; i < ITEM_COUNT; i++)
     {
         
         NSString *passedstring;
@@ -2635,11 +2532,11 @@
     }
     
     ///set simulate data
-    NSMutableArray *arrSimulate = [[NSMutableArray alloc] init];
-    for (int i = 0; i < [displayarray count]; i++){
-        [arrSimulate addObject:@"0"];
-    }
-    
+//    NSMutableArray *arrSimulate = [[NSMutableArray alloc] init];
+//    for (int i = 0; i < [displayarray count]; i++){
+//        [arrSimulate addObject:@"0"];
+//    }
+
     
     //code for solid lines
     if(displayarray.count>0)
@@ -2656,23 +2553,25 @@
         ///we loop displayarray to draw the chart
         for (int i = 0; i < displayarray.count; i++)
         {
-            float val = [[[displayarray objectAtIndex:i] valueForKey:@"rate"]intValue]  ;
-            
+            int val = [[[displayarray objectAtIndex:i] valueForKey:@"rate"] intValue]  ;
+            NSLog(@"val is :%d ", val);
+
             
             ////we get the index on xVal
             NSString *index;
             index= [NSString stringWithFormat:@"%d",i+1];
-            
+
             if(val != 0)
             {
-                
+
                 //   arrIndexPercent = [[NSMutableArray alloc]init];
                 //check we change the status as: 0 0 0 ...2: we draw the dash
                 if(drawing == 0 && previous!=-1)
                 {
                     [values addObject:[[ChartDataEntry alloc] initWithX:i y:val]];
 
-                    LineChartDataSet *d = [[LineChartDataSet alloc] initWithValues:values label:[NSString stringWithFormat:@""]];
+                    LineChartDataSet *d = [[LineChartDataSet alloc] initWithValues:values label:Nil
+                                           ];
 
                     d.lineWidth = 1.0f;
                     d.circleRadius = 0.0f;
@@ -2683,7 +2582,7 @@
                     [d setCircleColor:[UIColor blueColor]];
                     d.fillColor  =[UIColor blueColor];
                     d.fillAlpha  =66/225.f;
-                    d.lineDashLengths = @[@5.f, @1.f];
+                   // d.lineDashLengths = @[@5.f, @1.f];
                     [dataSets addObject:d];
                     
                     [values removeAllObjects];
@@ -2702,7 +2601,7 @@
 //                [values addObject:[[ChartDataEntry alloc] initWithValue:val xIndex:[self addValuetoIndex:index]-1]];
 
                 previous = val; //[[[displayarray objectAtIndex:i] valueForKey:@"rate"] intValue] ;
-                previousIndex = [self addValuetoIndex:index] -1;
+                previousIndex = [self addValuetoIndex:index] - 1;
                 
                 
             }
@@ -2714,11 +2613,11 @@
                     if (drawing == 1)
                     {
 //                        LineChartDataSet *d = [[LineChartDataSet alloc] initWithYVals:values label:[NSString stringWithFormat:@"DataSet %d", 1 + 1]];
-                        LineChartDataSet *d = [[LineChartDataSet alloc] initWithValues:values label:[NSString stringWithFormat:@""]];
+                        LineChartDataSet *d = [[LineChartDataSet alloc] initWithValues:values label:Nil];
 
                         d.lineWidth = 1.0f;
                         d.circleRadius = 3.0f;
-                        
+
                         d.drawValuesEnabled = NO;
                         d.drawCircleHoleEnabled = NO;
                         UIColor *color = [UIColor blackColor];
@@ -2744,17 +2643,9 @@
 
                             previous = 0;
                         }
-                        
-                        
-                        
-                        
                     }
                     drawing = 0;
-                    
-                    
                 }
-                
-                
             }
             
             
@@ -2763,7 +2654,7 @@
             {
 //                LineChartDataSet *d = [[LineChartDataSet alloc] initWithYVals:values label:[NSString stringWithFormat:@"DataSet %d", 1 + 1]];
 
-                LineChartDataSet *d = [[LineChartDataSet alloc] initWithValues:values label:[NSString stringWithFormat:@""]];
+                LineChartDataSet *d = [[LineChartDataSet alloc] initWithValues:values label:Nil];
 
                 d.lineWidth = 1.0f;
                 d.circleRadius = 3.0f;
@@ -2776,8 +2667,8 @@
                 d.fillColor  =[UIColor blueColor];
                 d.fillAlpha  =66/225.f;
                 [dataSets addObject:d];
-                
                 [values removeAllObjects];
+
                 previous =-1;
                 previousIndex = -1;
             }
@@ -2801,11 +2692,11 @@
 }
 
 ///processs date time to index xVals
--(NSInteger)addValuetoIndex:(NSString*)strDate
+-(int)addValuetoIndex:(NSString*)strDate
 {
-    NSInteger index = -1;
+    int index = -1;
     NSString *indexStr  = strDate;
-    index = [indexStr integerValue];
+    index = [indexStr intValue];
     return index;
 }
 
@@ -2829,7 +2720,7 @@
 //        else
 //            y =y + 1;
 //        //[entries addObject:[[BarChartDataEntry alloc] initWithValue:y xIndex:[self addValuetoIndex:index2]-1 ] ];
-        [entries addObject:[[BarChartDataEntry alloc]initWithX: index   y:y]];
+        [entries addObject:[[BarChartDataEntry alloc]initWithX: index   y:y+1]];
 
 //        [chartView.xAxis setCenteredEntries:percentagerates];
 
@@ -2956,7 +2847,7 @@
 
 -(void)dailygraph:(NSDate*)passeddate
 {
-    displayarray=[[NSMutableArray alloc]initWithArray:arraydatas];
+//    displayarray=[[NSMutableArray alloc]initWithArray:arraydatas];
 
     if ([DELEGATE.isTrac isEqualToString:@"G"])
     {
@@ -3054,9 +2945,9 @@
             //            {
             //Dhaval change here //change Dhaval here display https://bluewavevision.teamworkpm.net/#tasks/6415436?c=3822095
 
-            if (mainTemp == 0) {
-                temp = 0 ;
-            }
+//            if (mainTemp == 0) {
+//                temp = 0 ;
+//            }
             [percentagerates addObject:[NSString stringWithFormat:@"%f",temp]];
             
             
@@ -3081,7 +2972,6 @@
             
             if ([strIndex rangeOfString:@"-08-"].location != NSNotFound) {
                 passedstring=[NSString stringWithFormat:@"%@-08",[strIndex substringFromIndex:8]];
-                
              }
             
             if ([strIndex rangeOfString:@"-07-"].location != NSNotFound) {
@@ -3090,7 +2980,7 @@
             
             if ([strIndex rangeOfString:@"-06-"].location != NSNotFound) {
                 passedstring=[NSString stringWithFormat:@"%@-06",[strIndex substringFromIndex:8]];
-           }
+            }
             
             if ([strIndex rangeOfString:@"-05-"].location != NSNotFound) {
                passedstring=[NSString stringWithFormat:@"%@-05",[strIndex substringFromIndex:8]];
@@ -3099,6 +2989,7 @@
             if ([strIndex rangeOfString:@"-04-"].location != NSNotFound) {
                passedstring=[NSString stringWithFormat:@"%@-04",[strIndex substringFromIndex:8]];
             }
+            
             if ([strIndex rangeOfString:@"-03-"].location != NSNotFound) {
                 passedstring=[NSString stringWithFormat:@"%@-03",[strIndex substringFromIndex:8]];
             }

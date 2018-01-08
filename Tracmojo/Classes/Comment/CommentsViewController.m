@@ -29,13 +29,13 @@
 {
     if (ischeck) {
         ischeck=NO;
-        btnCheckbox.frame=CGRectMake(34, 276, 21, 22);
+       // btnCheckbox.frame=CGRectMake(34, 276, 21, 22);
         [btnCheckbox setImage:[UIImage imageNamed:@"unticks"] forState:UIControlStateNormal];
         
     }
     else{
         ischeck=YES;
-        btnCheckbox.frame=CGRectMake(34, 276, 28, 22);
+       // btnCheckbox.frame=CGRectMake(34, 276, 28, 22);
         [btnCheckbox setImage:[UIImage imageNamed:@"ticks"] forState:UIControlStateNormal];
         
     }
@@ -46,20 +46,25 @@
 {
     if (ischeck31) {
         ischeck31=NO;
-        btnCheckbox1.frame=CGRectMake([UIScreen mainScreen].bounds.size.width-160, 276, 21, 22);
+      //  btnCheckbox1.frame=CGRectMake([UIScreen mainScreen].bounds.size.width-160, 276, 21, 22);
         [btnCheckbox1 setImage:[UIImage imageNamed:@"unticks"] forState:UIControlStateNormal];
         
     }
     else{
         ischeck31=YES;
-        btnCheckbox1.frame=CGRectMake([UIScreen mainScreen].bounds.size.width-160, 276, 28, 22);
+       // btnCheckbox1.frame=CGRectMake([UIScreen mainScreen].bounds.size.width-160, 276, 28, 22);
         [btnCheckbox1 setImage:[UIImage imageNamed:@"ticks"] forState:UIControlStateNormal];
     }
 }
 
 
 -(void)viewDidLoad {
-    
+   
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+
+//    NSLog(@"%@", ((UITabBarController*)appDelegate.window.rootViewController).selectedViewController);
+    _lblsendMail.layer.cornerRadius  =  8;
+    _lblAddComment.layer.cornerRadius  =  8;
     if ([DELEGATE.isTrac isEqualToString:@"F"]) {
         btnTemp.hidden= NO;
     }
@@ -95,9 +100,9 @@
     islast=0;
     pager=0;
     
-    UIView* separatorLineView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, 0.5)];
-    separatorLineView.backgroundColor = [UIColor lightGrayColor]; /// may be here is clearColor;
-    [self.view addSubview:separatorLineView];
+//    UIView* separatorLineView = [[UIView alloc] initWithFrame:CGRectMake(0, _tbl_obj.frame.origin.y - 1 , [UIScreen mainScreen].bounds.size.width, 0.5)];
+//    separatorLineView.backgroundColor = [UIColor lightGrayColor]; /// may be here is clearColor;
+//    [self.view addSubview:separatorLineView];
 
     
     
@@ -329,7 +334,7 @@
 -(IBAction)addcomment:(id)sender
 {
     
-    scroll_popup.hidden=NO;    
+    _viewAdddcomment.hidden=NO;
 }
 
 
@@ -337,6 +342,7 @@
 -(void)addcomments:(NSDictionary *)result
 
 {
+    
     if ([[[result valueForKey:@"code"]stringValue] isEqualToString:@"200"])
     {
         [_txtv resignFirstResponder];
@@ -351,8 +357,9 @@
 }
 -(IBAction)touch_Message:(id)sender
 {
-    scroll_popup.hidden=NO;
-    
+ //   scroll_popup.hidden=NO;
+    _viewAdddcomment.hidden=NO;
+
     if ([Validate isEmpty:txt_message.text]) {
         UIAlertView *aler_msg=[[UIAlertView alloc] initWithTitle:nil message:@"Please enter message" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
         [aler_msg show];
@@ -401,6 +408,7 @@
         
     }
     scroll_popup.hidden=YES;
+    _viewAdddcomment.hidden=YES;
     [txt_message resignFirstResponder];
 }
 
@@ -410,6 +418,7 @@
 
     
     scroll_popup.hidden=YES;
+    _viewAdddcomment.hidden=YES;
     [txt_message resignFirstResponder];
 }
 

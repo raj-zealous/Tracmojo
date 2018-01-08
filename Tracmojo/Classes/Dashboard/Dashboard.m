@@ -21,6 +21,7 @@
 #import "tracrate.h"
 #import "HelpViewController.h"
 #import "tracreview.h"
+#import "SettingsViewController.h"
 #import <sqlite3.h>
 
 @interface Dashboard ()
@@ -217,7 +218,12 @@
    
    
 }
-
+- (IBAction)btnClickSettings:(id)sender {
+   
+   SettingsViewController *vc = [[SettingsViewController alloc]initWithNibName:@"SettingsViewController" bundle:nil];
+   [self.navigationController pushViewController:vc animated:true];
+}
+    
 
 -(void)ReloadTable
 {
@@ -748,10 +754,7 @@
    BOOL isURL = NO;
    isblink=NO;
    
-   
    cell.tag=indexPath.subRow;
-   
-   
    if (indexPath.row==0)
    {
       if (DELEGATE.isCheckNetWork)
@@ -811,8 +814,6 @@
       {
          headingLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 13.5,[UIScreen mainScreen].applicationFrame.size.width-90, 43)];
       }
-      
-      
       //      UILabel *headingLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 13.5,[UIScreen mainScreen].applicationFrame.size.width-90, 43)];
       
       if (DELEGATE.isCheckNetWork)
@@ -856,7 +857,7 @@
       //        headingLabel.lineBreakMode = YES;
       headingLabel.numberOfLines = 2;
       [cell addSubview:headingLabel];
-      UIImageView *separator=[[UIImageView alloc] initWithFrame:CGRectMake(15,68, [UIScreen mainScreen].applicationFrame.size.width, 1)];
+      UIImageView *separator=[[UIImageView alloc] initWithFrame:CGRectMake(15,73, [UIScreen mainScreen].applicationFrame.size.width, 1)];
       separator.backgroundColor=[UIColor lightGrayColor];
       [cell addSubview:separator];
       cell.detailTextLabel.textColor=[UIColor clearColor];
@@ -922,7 +923,7 @@
       headingLabel.backgroundColor = [UIColor clearColor];
       headingLabel.font = [UIFont fontWithName:@"Roboto-Regular" size:14.0];
       headingLabel.hidden = NO;
-      //  headingLabel.numberOfLines = 2;
+       headingLabel.numberOfLines = 2;
       [cell addSubview:headingLabel];
       
       
@@ -949,7 +950,7 @@
       
       
       if (g>1) {
-         Sub_headingLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, headingLabel.frame.origin.y+headingLabel.frame.size.height,[UIScreen mainScreen].applicationFrame.size.width-85,50)];
+         Sub_headingLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, headingLabel.frame.origin.y+headingLabel.frame.size.height,[UIScreen mainScreen].applicationFrame.size.width-85,35)];
       }
       else{
          Sub_headingLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, headingLabel.frame.origin.y+headingLabel.frame.size.height,[UIScreen mainScreen].applicationFrame.size.width-85,30)];
@@ -976,7 +977,7 @@
       
       Sub_headingLabel.numberOfLines =2;
       [cell addSubview:Sub_headingLabel];
-      UIImageView *separator=[[UIImageView alloc] initWithFrame:CGRectMake(15, 79, [UIScreen mainScreen].applicationFrame.size.width, 1)];
+      UIImageView *separator=[[UIImageView alloc] initWithFrame:CGRectMake(15, 73, [UIScreen mainScreen].applicationFrame.size.width, 1)];
       separator.backgroundColor=[UIColor lightGrayColor];
       [cell addSubview:separator];
       
@@ -1019,7 +1020,7 @@
       
       
       if (g>1) {
-         Sub_headingLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, headingLabel.frame.origin.y+headingLabel.frame.size.height,[UIScreen mainScreen].applicationFrame.size.width-85,50)];
+         Sub_headingLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, headingLabel.frame.origin.y+headingLabel.frame.size.height ,[UIScreen mainScreen].applicationFrame.size.width-85,35)];
       }
       else{
          Sub_headingLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, headingLabel.frame.origin.y+headingLabel.frame.size.height,[UIScreen mainScreen].applicationFrame.size.width-85,30)];
@@ -1188,7 +1189,7 @@
       headingLabel.font = [UIFont fontWithName:@"Roboto-Regular" size:14.0];
       headingLabel.hidden = NO;
       headingLabel.lineBreakMode = YES;
-      headingLabel.numberOfLines = 3;
+      headingLabel.numberOfLines = 2;
       
       
       
@@ -1197,7 +1198,7 @@
       [cell addSubview:headingLabel];
       [cell addSubview:Sub_headingLabel];
       
-      UIImageView *separator=[[UIImageView alloc] initWithFrame:CGRectMake(15, 79, [UIScreen mainScreen].applicationFrame.size.width, 1)];
+      UIImageView *separator=[[UIImageView alloc] initWithFrame:CGRectMake(15, 73, [UIScreen mainScreen].applicationFrame.size.width, 1)];
       separator.backgroundColor=[UIColor lightGrayColor];
       [cell addSubview:separator];
       
@@ -1207,7 +1208,7 @@
    UIButton *ratebutton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
    ratebutton.tag=indexPath.subRow-1;
    
-   [ratebutton setFrame:CGRectMake([UIScreen mainScreen].applicationFrame.size.width-52,8, 55, 35)];
+   [ratebutton setFrame:CGRectMake([UIScreen mainScreen].applicationFrame.size.width-52,20, 55, 35)];
    
    
    [ratebutton addTarget:self action:@selector(touchcolorrate:) forControlEvents:UIControlEventTouchUpInside];
@@ -1492,7 +1493,7 @@
    }
    
    else{
-      return 80.0f;
+      return 75.0f;
    }
    
 }

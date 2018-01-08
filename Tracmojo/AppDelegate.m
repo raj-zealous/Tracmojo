@@ -25,7 +25,7 @@
 #import <sqlite3.h>
 #import "DarckWaitView.h"
 #import "IntroductionViewController.h"
-
+#import "ActivityViewController.h"
 
 //#import <Fabric/Fabric.h>
 //#import <Crashlytics/Crashlytics.h>
@@ -38,7 +38,7 @@ NSString *const FBSessionStateChangedNotification = @"com.Nick.Tracmojo:FBSessio
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     //final by chinkal
-
+    
     self.isfirsttime = TRUE;
     
     NSString *currentAppVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
@@ -56,8 +56,8 @@ NSString *const FBSessionStateChangedNotification = @"com.Nick.Tracmojo:FBSessio
         
         
         if ([[[NSUserDefaults standardUserDefaults]valueForKey:@"login"] isEqualToString:@"Y"]) {
-        
-        
+            
+            
         }
         else{
             [[NSUserDefaults standardUserDefaults] setBool:TRUE forKey:@"IsUpdated"];
@@ -68,13 +68,13 @@ NSString *const FBSessionStateChangedNotification = @"com.Nick.Tracmojo:FBSessio
     }
     
     
-
+    
     
     _isyPlus=NO;
     _isOwnerP=NO;
     
     DELEGATE.ischeckadd=YES;
- 
+    
     _isbar=NO;
     _isfirst=NO;
     
@@ -97,9 +97,9 @@ NSString *const FBSessionStateChangedNotification = @"com.Nick.Tracmojo:FBSessio
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     DELEGATE.p_emailArray=[[NSMutableArray alloc] init];
-        DELEGATE.f_emailArray=[[NSMutableArray alloc] init];
+    DELEGATE.f_emailArray=[[NSMutableArray alloc] init];
     DELEGATE.dic_addPersonaltrac=[[NSMutableDictionary alloc] init];
-     _groupdic =[[NSMutableDictionary alloc] init];
+    _groupdic =[[NSMutableDictionary alloc] init];
     
     [[NSUserDefaults standardUserDefaults] setObject:@"0" forKey:@"time_stemp"];
     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -165,27 +165,27 @@ NSString *const FBSessionStateChangedNotification = @"com.Nick.Tracmojo:FBSessio
         
         [[NSUserDefaults standardUserDefaults] setBool:TRUE forKey:@"IsAlreadyLoggedIn"];
         [[NSUserDefaults standardUserDefaults]synchronize];
-
+        
     }
     else
     {
         [[NSUserDefaults standardUserDefaults] setBool:FALSE forKey:@"IsAlreadyLoggedIn"];
         [[NSUserDefaults standardUserDefaults]synchronize];
-
-
-       // if([[[NSUserDefaults standardUserDefaults] valueForKey:@"help"] isEqualToString:@"true"]){
-            self.objview=[[UserLoginForm alloc] initWithNibName:@"UserLoginForm" bundle:nil];
-             UINavigationController *objnvg=[[UINavigationController alloc] initWithRootViewController:self.objview];
-             objnvg.navigationBarHidden=YES;
-             self.window.rootViewController=objnvg;
-      //  }
-      //  else{
-//            IntroductionViewController *obj=[[IntroductionViewController alloc] initWithNibName:@"IntroductionViewController" bundle:nil];
-//            UINavigationController *objnvg1=[[UINavigationController alloc] initWithRootViewController:obj];
-//            objnvg1.navigationBarHidden=YES;
-//            self.window.rootViewController=objnvg1;
         
-    
+        
+        // if([[[NSUserDefaults standardUserDefaults] valueForKey:@"help"] isEqualToString:@"true"]){
+        self.objview=[[UserLoginForm alloc] initWithNibName:@"UserLoginForm" bundle:nil];
+        UINavigationController *objnvg=[[UINavigationController alloc] initWithRootViewController:self.objview];
+        objnvg.navigationBarHidden=YES;
+        self.window.rootViewController=objnvg;
+        //  }
+        //  else{
+        //            IntroductionViewController *obj=[[IntroductionViewController alloc] initWithNibName:@"IntroductionViewController" bundle:nil];
+        //            UINavigationController *objnvg1=[[UINavigationController alloc] initWithRootViewController:obj];
+        //            objnvg1.navigationBarHidden=YES;
+        //            self.window.rootViewController=objnvg1;
+        
+        
     }
     
     self.window.backgroundColor = [UIColor whiteColor];
@@ -197,13 +197,13 @@ NSString *const FBSessionStateChangedNotification = @"com.Nick.Tracmojo:FBSessio
 
 -(void)onDoneButtonPressed
 {
-  
-  /*LogInViewController *loginVC = [[LogInViewController alloc] initWithNibName:@"LogInViewController" bundle:nil];
-  _navigationController = [[UINavigationController alloc] initWithRootViewController:loginVC];
-  [self.navigationController setNavigationBarHidden:YES animated:NO];
-  self.window.rootViewController = self.navigationController;
-  
-  [self.window makeKeyAndVisible];*/
+    
+    /*LogInViewController *loginVC = [[LogInViewController alloc] initWithNibName:@"LogInViewController" bundle:nil];
+     _navigationController = [[UINavigationController alloc] initWithRootViewController:loginVC];
+     [self.navigationController setNavigationBarHidden:YES animated:NO];
+     self.window.rootViewController = self.navigationController;
+     
+     [self.window makeKeyAndVisible];*/
 }
 
 
@@ -234,8 +234,8 @@ NSString *const FBSessionStateChangedNotification = @"com.Nick.Tracmojo:FBSessio
     if(remoteHostStatus == NotReachable)
     {
         
-            _isInternet=FALSE;
-       // [alert show];
+        _isInternet=FALSE;
+        // [alert show];
     }
     else if (remoteHostStatus == ReachableViaWWAN)
     {
@@ -268,7 +268,7 @@ NSString *const FBSessionStateChangedNotification = @"com.Nick.Tracmojo:FBSessio
     
     Dashboard *vc1 = [[Dashboard alloc]initWithNibName:@"Dashboard" bundle:nil];
     SettingsViewController *vc2 = [[SettingsViewController alloc]initWithNibName:@"SettingsViewController" bundle:nil];
-    
+// ActivityViewController *vc2 = [[ActivityViewController alloc]initWithNibName:@"ActivityViewController" bundle:nil];
     ViewController *vc3 = [[ViewController alloc]initWithNibName:@"ViewController" bundle:nil];
     ManageViewController *vc4 = [[ManageViewController alloc]initWithNibName:@"ManageViewController" bundle:nil];
     
@@ -354,12 +354,23 @@ NSString *const FBSessionStateChangedNotification = @"com.Nick.Tracmojo:FBSessio
                 {
                     [element removeFromSuperview];
                 }
+                if (([[UIScreen mainScreen] bounds].size.height) == 812)
+                {
+                    [UIView animateWithDuration:0.45 animations:^{
+                        alert.frame =  CGRectMake(0 ,88,[UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].applicationFrame.size.height-128);
+                        
+                    }];
+                }
+                else
+                {
+                    [UIView animateWithDuration:0.45 animations:^{
+                        alert.frame =  CGRectMake(0 ,64,[UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].applicationFrame.size.height-95);
+                        
+                    }];
+                }
                 
-                [UIView animateWithDuration:0.45 animations:^{
-                    alert.frame =  CGRectMake(0 ,64,[UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].applicationFrame.size.height-95);
-                    
-                }];
-            
+                
+               
                 
                 self.isNewTrackSelected = YES;
                 
@@ -378,14 +389,13 @@ NSString *const FBSessionStateChangedNotification = @"com.Nick.Tracmojo:FBSessio
                     DELEGATE.tabBarController.selectedIndex=3;
                 }
 
-                
             }
-           
+            
         }
         else
         {
             
-             DELEGATE.ischeckadd=YES;
+            DELEGATE.ischeckadd=YES;
             DELEGATE.isNewTrackSelected=YES;
             if ([[[NSUserDefaults standardUserDefaults] valueForKey:@"title"]isEqualToString:@"dash"])
             {
@@ -399,14 +409,14 @@ NSString *const FBSessionStateChangedNotification = @"com.Nick.Tracmojo:FBSessio
             {
                 DELEGATE.tabBarController.selectedIndex=3;
             }
-
-              [[UITabBarItem appearance] setTitleTextAttributes:@{ UITextAttributeTextColor : [UIColor blackColor] }
-               forState:UIControlStateNormal];
+            
+            [[UITabBarItem appearance] setTitleTextAttributes:@{ UITextAttributeTextColor : [UIColor blackColor] }
+                                                     forState:UIControlStateNormal];
             
             [[UITabBarItem appearance] setTitleTextAttributes:@{ UITextAttributeTextColor : [UIColor blackColor] }
                                                      forState:UIControlStateSelected];
             [[_tabBarController.tabBar.items objectAtIndex:2]setFinishedSelectedImage:[UIImage imageNamed:@"close_red"] withFinishedUnselectedImage:[UIImage imageNamed:@"add_gray"]];
-                       
+            
             
             for (UIView *view in self.window.subviews) {
                 
@@ -420,10 +430,10 @@ NSString *const FBSessionStateChangedNotification = @"com.Nick.Tracmojo:FBSessio
     }
     else
     {
-         DELEGATE.ischeckadd=YES;
+        DELEGATE.ischeckadd=YES;
         //  [[UITabBarItem appearance] setTitleTextAttributes:@{ UITextAttributeTextColor : [UIColor redColor] }
         //   forState:UIControlStateNormal];
-       
+        
         for (UIView *view in self.window.subviews) {
             
             if (view.tag == 1001) {
@@ -431,7 +441,7 @@ NSString *const FBSessionStateChangedNotification = @"com.Nick.Tracmojo:FBSessio
             }
             
         }
-
+        
         [[_tabBarController.tabBar.items objectAtIndex:2]setFinishedSelectedImage:[UIImage imageNamed:@"close_red"] withFinishedUnselectedImage:[UIImage imageNamed:@"add_gray"]];
         [[UITabBarItem appearance] setTitleTextAttributes:@{ UITextAttributeTextColor : [UIColor blackColor]
                                                              }
@@ -439,7 +449,7 @@ NSString *const FBSessionStateChangedNotification = @"com.Nick.Tracmojo:FBSessio
         [[_tabBarController.tabBar.items objectAtIndex:2]setFinishedSelectedImage:[UIImage imageNamed:@"close_red"] withFinishedUnselectedImage:[UIImage imageNamed:@"add_gray"]];
         [[UITabBarItem appearance] setTitleTextAttributes:@{ UITextAttributeTextColor : [UIColor blackColor]
                                                              }
-        forState:UIControlStateNormal];
+                                                 forState:UIControlStateNormal];
         
     }
 }
@@ -452,34 +462,34 @@ NSString *const FBSessionStateChangedNotification = @"com.Nick.Tracmojo:FBSessio
     
     
     _isFromReview=NO;
-//    if (DELEGATE.is_addPersonal) {
-//        
-//        UIAlertView *alter_msg=[[UIAlertView alloc] initWithTitle:nil message:@"Sorry! You can't add anymore personal trac" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-//        
-//        [alter_msg show];
-//        
-//    }
-//    
-//    else{
-
-        
+    //    if (DELEGATE.is_addPersonal) {
+    //
+    //        UIAlertView *alter_msg=[[UIAlertView alloc] initWithTitle:nil message:@"Sorry! You can't add anymore personal trac" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    //
+    //        [alter_msg show];
+    //
+    //    }
+    //
+    //    else{
+    
+    
     
     dispatch_async(dispatch_get_main_queue(), ^{
-
-    
         
-    PersonalTracs *gotPersonal=[[PersonalTracs alloc] initWithNibName:@"PersonalTracs" bundle:nil];
+        
+        
+        PersonalTracs *gotPersonal=[[PersonalTracs alloc] initWithNibName:@"PersonalTracs" bundle:nil];
         
         [DELEGATE.p_emailArray removeAllObjects];
         [DELEGATE.f_emailArray removeAllObjects];
         _isgroup=NO;
         DELEGATE.isEdit=NO;
-    DELEGATE.dic_edittrac=nil;
-    UINavigationController *nvg=[[UINavigationController alloc] initWithRootViewController:gotPersonal];
+        DELEGATE.dic_edittrac=nil;
+        UINavigationController *nvg=[[UINavigationController alloc] initWithRootViewController:gotPersonal];
         nvg.navigationBarHidden=YES;
-    self.window.rootViewController=nvg;
+        self.window.rootViewController=nvg;
     });
-  
+    
     for (UIView *view in self.window.subviews) {
         
         if (view.tag == 1001) {
@@ -493,7 +503,7 @@ NSString *const FBSessionStateChangedNotification = @"com.Nick.Tracmojo:FBSessio
 -(IBAction)touchGroupTrac:(id)sender
 {    dispatch_async(dispatch_get_main_queue(), ^{
     _isFromReview=NO;
-     _isgroup=YES;
+    _isgroup=YES;
     GroupTrac *gotPersonal=[[GroupTrac alloc] initWithNibName:@"GroupTrac" bundle:nil];
     DELEGATE.isEdit=NO;
     DELEGATE.dic_edittrac=nil;
@@ -557,13 +567,13 @@ NSString *const FBSessionStateChangedNotification = @"com.Nick.Tracmojo:FBSessio
                 [mc followed_user_id:[NSString stringWithFormat:@"%@",[[NSUserDefaults standardUserDefaults] valueForKey:@"userID"]] trac_id:[NSString stringWithFormat:@"%@",[[dictionary objectForKey:@"aps"] objectForKey:@"trac_id"]] invitation_type:@"participate" action_chosen:@"d" selector:@selector(getResponseFromFollowers:)];
             }
         }
-
+        
     }
     else  if (alertView.tag == 9)
     {
         if (buttonIndex == 0)
         {
-         
+            
         }
     }
 }
@@ -573,7 +583,7 @@ NSString *const FBSessionStateChangedNotification = @"com.Nick.Tracmojo:FBSessio
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
     
-   
+    
     
     DarckWaitView *drk = [[DarckWaitView alloc] initWithDelegate:nil andInterval:0.1 andMathod:nil];
     [drk hide];
@@ -583,7 +593,7 @@ NSString *const FBSessionStateChangedNotification = @"com.Nick.Tracmojo:FBSessio
     
     //NSLog(@"%@",dictionary);
     if ([[[userInfo valueForKey:@"aps"]valueForKey:@"message" ]isEqualToString:@"contact"]) {
-       
+        
         UIAlertView *push_notification=[[UIAlertView alloc]initWithTitle:nil message:[[userInfo valueForKey:@"aps"]valueForKey:@"alert" ] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         push_notification.tag=1;
         [push_notification show];
@@ -654,21 +664,21 @@ NSString *const FBSessionStateChangedNotification = @"com.Nick.Tracmojo:FBSessio
         push_notification.tag=10;
         [push_notification show];
     }
-
+    
 }
 
 - (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     
     if (deviceToken) {
-
+        
         self.tokenstring =[NSString stringWithFormat:@"%@",deviceToken];
         
-       self.tokenstring = [_tokenstring stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+        self.tokenstring = [_tokenstring stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
         self.tokenstring = [[NSString alloc]initWithFormat:@"%@",[self.tokenstring stringByReplacingOccurrencesOfString:@" " withString:@""]];
         
         NSLog(@"tokenstring is %@",self.tokenstring);
         
-       
+        
     }
     
     
@@ -678,7 +688,7 @@ NSString *const FBSessionStateChangedNotification = @"com.Nick.Tracmojo:FBSessio
 {
     self.tokenstring=@"123456789";
     
-   
+    
 }
 
 
@@ -692,17 +702,17 @@ NSString *const FBSessionStateChangedNotification = @"com.Nick.Tracmojo:FBSessio
         
     }
     
-
+    
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
     
     
- 
     
     
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
@@ -739,9 +749,9 @@ NSString *const FBSessionStateChangedNotification = @"com.Nick.Tracmojo:FBSessio
         return wasHandled;
         
     }
-//    else if([[[[NSString stringWithFormat:@"%@",url] componentsSeparatedByString:@":"] objectAtIndex:0]isEqualToString:@"db-ud9pddjohl8f7p1"]){
-//        return NO;
-//    }
+    //    else if([[[[NSString stringWithFormat:@"%@",url] componentsSeparatedByString:@":"] objectAtIndex:0]isEqualToString:@"db-ud9pddjohl8f7p1"]){
+    //        return NO;
+    //    }
     else
     {
         return [GPPURLHandler handleURL:url
@@ -829,7 +839,7 @@ NSString *const FBSessionStateChangedNotification = @"com.Nick.Tracmojo:FBSessio
         }
         
     }
-
+    
 }
 -(BOOL)openDatabase {
     
@@ -859,7 +869,7 @@ NSString *const FBSessionStateChangedNotification = @"com.Nick.Tracmojo:FBSessio
 -(void)inserttrac_id:(NSString *)trac_id trac_data:(NSString *)trac_data trac_type:(NSString *)trac_type
 {
     trac_data=[trac_data stringByReplacingOccurrencesOfString:@"'" withString:@"`"];
-       NSString* sql = [NSString stringWithFormat:@"INSERT INTO tracmojo (trac_id,trac_data,trac_type) VALUES (%@,'%@','%@') ",trac_id,trac_data ,trac_type];
+    NSString* sql = [NSString stringWithFormat:@"INSERT INTO tracmojo (trac_id,trac_data,trac_type) VALUES (%@,'%@','%@') ",trac_id,trac_data ,trac_type];
     [self executeSQL:sql];
 }
 
@@ -886,7 +896,7 @@ NSString *const FBSessionStateChangedNotification = @"com.Nick.Tracmojo:FBSessio
     NSString* sql = [NSString stringWithFormat:@"SELECT * FROM tracmojo"];
     if (sqlite3_prepare_v2(_database, [sql UTF8String], -1, &selectStatement, NULL) == SQLITE_OK) {
         while (sqlite3_step(selectStatement)==SQLITE_ROW) {
-           
+            
             
             if ([[[NSString alloc] initWithUTF8String: (const char *) sqlite3_column_text( selectStatement, 2)]isEqualToString:@"f"])
             {
@@ -906,11 +916,11 @@ NSString *const FBSessionStateChangedNotification = @"com.Nick.Tracmojo:FBSessio
                 
             }
         }
-
+        
     }
     else
     {
-       
+        
     }
     sqlite3_finalize(selectStatement);
     return YES;
@@ -928,7 +938,7 @@ NSString *const FBSessionStateChangedNotification = @"com.Nick.Tracmojo:FBSessio
     {
         return NO;
     }
-
+    
 }
 
 -(BOOL)executeSQL:(NSString*)sql {

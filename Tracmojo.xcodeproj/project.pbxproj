@@ -40,6 +40,8 @@
 		1DD95DDB1ADE342100875057 /* UMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD95DDA1ADE342100875057 /* UMTableViewCell.m */; };
 		1DDA410C1B21806700F6C1D9 /* tracreview.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDA410B1B21806700F6C1D9 /* tracreview.m */; };
 		39E806D81E791FC4006AC435 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E806D71E791FC4006AC435 /* UIView+Toast.m */; };
+		3E2F09191FFD07B80084A74A /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2F09171FFD07B80084A74A /* ActivityViewController.m */; };
+		3E2F091A1FFD07B80084A74A /* ActivityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E2F09181FFD07B80084A74A /* ActivityViewController.xib */; };
 		3E845EC21F70F4B4006238AE /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E845EC11F70F4B4006238AE /* ExternalAccessory.framework */; };
 		3E845ECA1F7133BC006238AE /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E845EC91F7133BB006238AE /* AdSupport.framework */; };
 		3E845ECC1F7133C3006238AE /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E845ECB1F7133C3006238AE /* Twitter.framework */; };
@@ -384,6 +386,9 @@
 		1DF9F8E81B5F80A900E6A0FD /* Header-SwiftBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Header-SwiftBridge.h"; path = "../Header-SwiftBridge.h"; sourceTree = "<group>"; };
 		39E806D61E791FC4006AC435 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		39E806D71E791FC4006AC435 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		3E2F09161FFD07B80084A74A /* ActivityViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
+		3E2F09171FFD07B80084A74A /* ActivityViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
+		3E2F09181FFD07B80084A74A /* ActivityViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityViewController.xib; sourceTree = "<group>"; };
 		3E60BA751F729D6E004EC6C8 /* tracmojo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = tracmojo.entitlements; sourceTree = "<group>"; };
 		3E845EBF1F70F4AA006238AE /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		3E845EC11F70F4B4006238AE /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
@@ -898,8 +903,8 @@
 		1DD95DC61ADE31FD00875057 /* PodFiles */ = {
 			isa = PBXGroup;
 			children = (
-				1DD95DC71ADE31FD00875057 /* NSMutableArray+SWUtilityButtons.h */,
 				1DD95DC81ADE31FD00875057 /* NSMutableArray+SWUtilityButtons.m */,
+				1DD95DC71ADE31FD00875057 /* NSMutableArray+SWUtilityButtons.h */,
 				1DD95DC91ADE31FD00875057 /* SWCellScrollView.h */,
 				1DD95DCA1ADE31FD00875057 /* SWCellScrollView.m */,
 				1DD95DCB1ADE31FD00875057 /* SWLongPressGestureRecognizer.h */,
@@ -912,6 +917,17 @@
 				1DD95DD21ADE31FD00875057 /* SWUtilityButtonView.m */,
 			);
 			path = PodFiles;
+			sourceTree = "<group>";
+		};
+		3E2F091B1FFD07CD0084A74A /* Activity controller */ = {
+			isa = PBXGroup;
+			children = (
+				3E2F09161FFD07B80084A74A /* ActivityViewController.h */,
+				3E2F09171FFD07B80084A74A /* ActivityViewController.m */,
+				3E2F09181FFD07B80084A74A /* ActivityViewController.xib */,
+			);
+			name = "Activity controller";
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		7B3EB81E1F6A653F00D06D1E /* Charts */ = {
@@ -1433,6 +1449,7 @@
 		7CA247FC1ABC3BD100DC496E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3E2F091B1FFD07CD0084A74A /* Activity controller */,
 				7B3EB81E1F6A653F00D06D1E /* Charts */,
 				1D7FBE0A1B2AF97B000A0988 /* Toast */,
 				1D7A26041BCE742E00FB83BC /* Introduction */,
@@ -1881,6 +1898,7 @@
 				7C97F8751AD65B1B003E4B93 /* RobotoCondensed-BoldItalic.ttf in Resources */,
 				1D65A5191ADD3F2E001D3387 /* ManageViewController.xib in Resources */,
 				1D7A261A1BCE7F2300FB83BC /* intro3.png in Resources */,
+				3E2F091A1FFD07B80084A74A /* ActivityViewController.xib in Resources */,
 				7C97F86E1AD65B1B003E4B93 /* Roboto-LightItalic.ttf in Resources */,
 				7CA2492D1ABC3BD200DC496E /* MYRIADPRO-SEMIBOLD.OTF in Resources */,
 				1DD95DC51ADE1FF400875057 /* ManageTableViewCell.xib in Resources */,
@@ -2053,6 +2071,7 @@
 				7B3EB9321F6A653F00D06D1E /* YAxisRendererRadarChart.swift in Sources */,
 				7C70CE2B1ABC29EE00ADB606 /* AppDelegate.m in Sources */,
 				7B3EB92C1F6A653F00D06D1E /* ScatterChartRenderer.swift in Sources */,
+				3E2F09191FFD07B80084A74A /* ActivityViewController.m in Sources */,
 				7B3EB8EE1F6A653F00D06D1E /* IChartDataSet.swift in Sources */,
 				7B3EB9301F6A653F00D06D1E /* YAxisRenderer.swift in Sources */,
 				7C080E4A1AC52E6A00536123 /* ViewController.m in Sources */,
@@ -2251,6 +2270,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: BlueWaveVision Pty Ltd (U5L8F43QAR)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: BlueWaveVision Pty Ltd (U5L8F43QAR)";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = U5L8F43QAR;
 				ENABLE_BITCODE = NO;
@@ -2271,7 +2291,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "04fac50a-45ce-4ee4-a93c-379c3c0b3f25";
+				PROVISIONING_PROFILE = "48e7a361-831b-43d4-9f73-c64e5870f003";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 			};
@@ -2295,6 +2315,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: BlueWaveVision Pty Ltd (U5L8F43QAR)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: BlueWaveVision Pty Ltd (U5L8F43QAR)";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = YES;
 				DEVELOPMENT_TEAM = U5L8F43QAR;
 				ENABLE_BITCODE = NO;
@@ -2308,7 +2329,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PROVISIONING_PROFILE = "04fac50a-45ce-4ee4-a93c-379c3c0b3f25";
+				PROVISIONING_PROFILE = "48e7a361-831b-43d4-9f73-c64e5870f003";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -2334,15 +2355,16 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tracmojo/Tracmojo-Prefix.pch";
 				INFOPLIST_FILE = "Tracmojo/Tracmojo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bluewave.Tracmojo;
 				PRODUCT_NAME = tracmojo;
 				PROVISIONING_PROFILE = "04fac50a-45ce-4ee4-a93c-379c3c0b3f25";
 				PROVISIONING_PROFILE_SPECIFIER = com.bluewave.Tracmojo_Store6oct;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kuldipsinh.gadhavi/Desktop/Tracmojo/Header-SwiftBridge.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kuldipsinh.gadhavi/Documents/Tracmojo/Header-SwiftBridge.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7 armv7s";
@@ -2370,16 +2392,16 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tracmojo/Tracmojo-Prefix.pch";
 				INFOPLIST_FILE = "Tracmojo/Tracmojo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bluewave.Tracmojo;
 				PRODUCT_NAME = tracmojo;
 				PROVISIONING_PROFILE = "04fac50a-45ce-4ee4-a93c-379c3c0b3f25";
 				PROVISIONING_PROFILE_SPECIFIER = com.bluewave.Tracmojo_Store6oct;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kuldipsinh.gadhavi/Desktop/Tracmojo/Header-SwiftBridge.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kuldipsinh.gadhavi/Documents/Tracmojo/Header-SwiftBridge.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7 armv7s";

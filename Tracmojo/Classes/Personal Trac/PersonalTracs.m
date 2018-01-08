@@ -26,6 +26,17 @@
 
 - (void)viewDidLoad {
  
+    txt_trac.delegate  =  self;
+    txt_ratewording.delegate  = self;
+    txt_trac.inputView = pickerView_trac;
+    txt_ratewording.inputView = pickerView_ratewording;
+    
+    
+    
+    pickerView_trac.delegate  =  self ;
+    pickerView_ratewording.delegate  =  self;
+    pickerView_trac.dataSource =  self;
+    pickerView_ratewording.dataSource = self ;
     [self showtrac];
     [self showwording];
    
@@ -470,14 +481,15 @@ str_rateword_id=[NSString stringWithFormat:@"1"];
 - (void)showtrac {
     
     
-    pickerView_trac = [[UIPickerView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height-300, self.view.bounds.size.width, 300)];
-    pickerView_trac.delegate=self;
-    pickerView_trac.dataSource=self;
+    pickerView_trac = [[UIPickerView alloc] init];
+    pickerView_trac.delegate = self;
+    //pickerView_trac = [[UIPickerView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height-300, self.view.bounds.size.width, 300)];
+   
     pickerView_trac.backgroundColor=[UIColor whiteColor];
     pickerView_trac.hidden = NO;
     
     UIToolbar *myToolbar = [[UIToolbar alloc] initWithFrame:
-                            CGRectMake(0,0, 320, 44)]; //should code with variables to support view resizing
+                            CGRectMake(0,0, self.view.frame.size.height, 44)]; //should code with variables to support view resizing
     myToolbar.barStyle = UIBarStyleBlackOpaque;
     [myToolbar sizeToFit];
  
@@ -496,10 +508,11 @@ str_rateword_id=[NSString stringWithFormat:@"1"];
 
 - (void)showwording {
     
+    pickerView_ratewording = [[UIPickerView alloc] init] ;
+    pickerView_ratewording.delegate = self;
+   // pickerView_ratewording = [[UIPickerView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height-300, self.view.bounds.size.width, 300)];
+ 
     
-    pickerView_ratewording = [[UIPickerView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height-300, self.view.bounds.size.width, 300)];
-    pickerView_ratewording.delegate=self;
-    pickerView_ratewording.dataSource=self;
     pickerView_ratewording.backgroundColor=[UIColor whiteColor];
     pickerView_ratewording.hidden = NO;
     

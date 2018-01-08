@@ -13,6 +13,7 @@
 #import "UMTableViewCell.h"
 #import "PersonalTracs.h"
 #import "GroupTrac.h"
+#import "SettingsViewController.h"
 
 @interface ManageViewController ()
 @property (nonatomic, weak) UIRefreshControl *refreshControl;
@@ -49,8 +50,6 @@
     refreshControl.tintColor = [UIColor blueColor];
     
     self.refreshControl = refreshControl;
-    
-    
     myarray=[[NSMutableArray alloc]init];
     grouparray=[[NSMutableArray alloc]init];
     followarray=[[NSMutableArray alloc]init];
@@ -106,7 +105,12 @@
 }
 
 
-
+- (IBAction)btnClickSettings:(id)sender {
+    
+    SettingsViewController *vc = [[SettingsViewController alloc]initWithNibName:@"SettingsViewController" bundle:nil];
+    [self.navigationController pushViewController:vc animated:true];
+}
+    
 
 -(void)didgetResonseAlltracs1:(NSDictionary*)dic
 {
@@ -161,15 +165,7 @@
         [v setAlpha:1.0];
         [DELEGATE.tabBarController.tabBar addSubview:v];
         [DELEGATE.tabBarController.tabBar addSubview:headingLabel];
-        
-        
-        
-        
-        
-
-        
-        
-        
+    
         if ([dic valueForKey:@"personal_trac"]) {
               islast_personla=[NSString stringWithFormat:@"%@",[[dic objectForKey:@"personal_trac"] valueForKey:@"is_last"]];
             
@@ -209,7 +205,6 @@
 - (void)reloadTableViewWithData2:(NSArray *)array item:(int)item section:(int)section
 {
   
-    
     // Refresh data not scrolling
     [self.tableView refreshData];
     
@@ -316,6 +311,12 @@
         {
             button.frame = CGRectMake([UIScreen mainScreen].applicationFrame.size.width-294, 02, 60, 40.0);
         }
+        else if ([UIScreen mainScreen].applicationFrame.size.height <= 812)
+        {
+            button.frame = CGRectMake([UIScreen mainScreen].applicationFrame.size.width-255, 02, 60, 40.0);
+        }
+       
+
         
        cell.textLabel.text=@"manage my tracs";
         
@@ -350,6 +351,11 @@
         {
             button.frame = CGRectMake([UIScreen mainScreen].applicationFrame.size.width-275, 02, 60, 40.0);
         }
+        else if ([UIScreen mainScreen].applicationFrame.size.height <= 812)
+        {
+            button.frame = CGRectMake([UIScreen mainScreen].applicationFrame.size.width-238, 02, 60, 40.0);
+        }
+        
         cell.textLabel.text=@"manage group tracs";
          [cell addSubview:button];
     }

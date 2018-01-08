@@ -75,8 +75,9 @@
     mytoolbar2 = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0, 0.0, [UIScreen mainScreen].bounds.size.width, 44.0)];
     mytoolbar2.barStyle = UIBarStyleBlack;
     
+    
     UIBarButtonItem *done2 = [[UIBarButtonItem alloc] initWithTitle:@"Done"
-                                                             style:UIBarButtonItemStyleBordered
+                                                             style:UIBarButtonItemStylePlain
                                                             target:self action:@selector(donePressed2)];
     
     UIBarButtonItem *flexibleSpace1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
@@ -478,8 +479,6 @@
 -(BOOL)validation
 {
     
-    
-    
     NSString *name = [self.txt_tracdetail .text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     
     NSString *ref_name = [self.txt_trac .text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
@@ -493,9 +492,7 @@
       NSString *rate3 = [self.txt_rate3.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
       NSString *rate4 = [self.txt_rate4.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
       NSString *rate5 = [self.txt_rate5.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    
-    
-    
+
     if([name isEqualToString:@"Enter your trac here"] ||ref_name.length <=0 || type.length <=0 )
     {
         

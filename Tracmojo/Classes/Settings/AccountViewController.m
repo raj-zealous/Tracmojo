@@ -164,19 +164,19 @@
             _lbl1.hidden=YES;
             _lbl2.hidden=YES;
             
-            
+             if (_txtfld_pass.hidden == YES && _txtfld_current.hidden  == YES)
+             {
+                 _lblPasswordHightCOnstant.constant  = 0;
+                 self.view.setNeedsUpdateConstraints;
+             }
             
             _phnlbl.frame=CGRectMake(_phnlbl.frame.origin.x, _phnlbl.frame.origin.y-122, _phnlbl.frame.size.width, _phnlbl.frame.size.height);
             
-           
-             _txtCode.frame=CGRectMake(_txtCode.frame.origin.x, _txtCode.frame.origin.y-122, _txtCode.frame.size.width, _txtCode.frame.size.height);\
+            _txtCode.frame=CGRectMake(_txtCode.frame.origin.x, _txtCode.frame.origin.y-122, _txtCode.frame.size.width, _txtCode.frame.size.height);\
             
-             _txtfld_phone.frame=CGRectMake(_txtfld_phone.frame.origin.x, _txtfld_phone.frame.origin.y-122, _txtfld_phone.frame.size.width, _txtfld_phone.frame.size.height);
-            
-            
+            _txtfld_phone.frame=CGRectMake(_txtfld_phone.frame.origin.x, _txtfld_phone.frame.origin.y-122, _txtfld_phone.frame.size.width, _txtfld_phone.frame.size.height);
             
             _send_btn.frame=CGRectMake(_send_btn.frame.origin.x, _send_btn.frame.origin.y-122, _send_btn.frame.size.width, _send_btn.frame.size.height);
-            
             
             _img1.hidden=YES;
             _img2.hidden=YES;
@@ -383,8 +383,6 @@
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"Please enter secondary email" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
             [_txtfld_second becomeFirstResponder];
             [alert show];
-            
-            
         }
         
         else  if(namef.length <=0)
@@ -401,8 +399,6 @@
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"Please enter last name" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
             [_txtfld_name2 becomeFirstResponder];
             [alert show];
-            
-            
         }
         
         else if(cpass.length >0 && !is_social)
@@ -413,6 +409,7 @@
                 [_txtfld_pass becomeFirstResponder];
                 [alert show];
             }
+            
             else if(cpass.length<=0)
             {
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"Please enter new password"   delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
@@ -431,11 +428,7 @@
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"Please enter contact no" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
             [_txtfld_phone becomeFirstResponder];
             [alert show];
-            
-            
         }
-        
-        
         else
         {
             _txtfld_pass.text=@"";

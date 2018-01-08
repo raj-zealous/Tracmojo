@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.scrollView.clipsToBounds = NO;
     self.scrollView.alwaysBounceHorizontal = false;
     self.automaticallyAdjustsScrollViewInsets = NO;
     appDelegate =(AppDelegate *)[[UIApplication sharedApplication]delegate];
@@ -70,7 +70,6 @@
         [self.scrollView addSubview:imgHelp];
     }
     [self.scrollView setContentSize:CGSizeMake(self.scrollView.frame.size.width*6, self.scrollView.frame.size.height)];
-    
     self.pageControl.numberOfPages = 6;
     self.automaticallyAdjustsScrollViewInsets = NO;
 

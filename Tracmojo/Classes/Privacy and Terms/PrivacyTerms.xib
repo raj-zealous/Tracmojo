@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,44 +21,65 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="e64-3m-QP3">
-                    <rect key="frame" x="0.0" y="20" width="50" height="40"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
-                    <state key="normal" image="Backbutton">
-                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="btnBackClicked:" destination="-1" eventType="touchUpInside" id="K9s-k9-6t7"/>
-                    </connections>
-                </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" id="s7G-lT-8UO">
-                    <rect key="frame" x="120" y="31" width="136" height="17"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headerDevider" id="4qn-in-SNL">
-                    <rect key="frame" x="0.0" y="64" width="375" height="1"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
-                </imageView>
-                <webView contentMode="scaleToFill" id="IMs-Mx-A1i">
-                    <rect key="frame" x="0.0" y="65" width="375" height="553"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
-                    <connections>
-                        <outlet property="delegate" destination="-1" id="UkD-Qt-Ats"/>
-                    </connections>
-                </webView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="headerDevider" id="hxC-Zx-ZZW">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G9c-5j-nfh">
+                    <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e64-3m-QP3">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="TwQ-UR-gwt"/>
+                                <constraint firstAttribute="width" constant="50" id="qze-Hs-KD7"/>
+                            </constraints>
+                            <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
+                            <state key="normal" image="Backbutton">
+                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="btnBackClicked:" destination="-1" eventType="touchUpInside" id="K9s-k9-6t7"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="s7G-lT-8UO">
+                            <rect key="frame" x="147.5" y="13" width="81" height="17"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="17" id="8gQ-BI-dr4"/>
+                            </constraints>
+                            <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headerDevider" translatesAutoresizingMaskIntoConstraints="NO" id="4qn-in-SNL">
+                            <rect key="frame" x="0.0" y="44" width="375" height="1"/>
+                            <color key="backgroundColor" red="0.017912079015544036" green="0.017912079015544036" blue="0.017912079015544036" alpha="0.26037081866197193" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="gwo-Xl-MfF"/>
+                            </constraints>
+                            <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="4qn-in-SNL" firstAttribute="leading" secondItem="G9c-5j-nfh" secondAttribute="leading" id="2MB-nb-MuO"/>
+                        <constraint firstAttribute="bottom" secondItem="4qn-in-SNL" secondAttribute="bottom" constant="-1" id="3XU-Ke-zqh"/>
+                        <constraint firstItem="s7G-lT-8UO" firstAttribute="centerX" secondItem="G9c-5j-nfh" secondAttribute="centerX" id="DmZ-5N-2uU"/>
+                        <constraint firstItem="e64-3m-QP3" firstAttribute="leading" secondItem="G9c-5j-nfh" secondAttribute="leading" id="G5q-Lf-CoR"/>
+                        <constraint firstAttribute="height" constant="44" id="LuG-Ue-g1J"/>
+                        <constraint firstItem="s7G-lT-8UO" firstAttribute="top" secondItem="G9c-5j-nfh" secondAttribute="top" constant="13" id="hOp-cS-cLJ"/>
+                        <constraint firstItem="e64-3m-QP3" firstAttribute="top" secondItem="G9c-5j-nfh" secondAttribute="top" id="iQW-TG-mi1"/>
+                        <constraint firstAttribute="trailing" secondItem="4qn-in-SNL" secondAttribute="trailing" id="u1E-bn-IQg"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headerDevider" translatesAutoresizingMaskIntoConstraints="NO" id="hxC-Zx-ZZW">
                     <rect key="frame" x="0.0" y="626" width="375" height="1"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.26037081866197193" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="d5b-dt-GUN"/>
+                    </constraints>
                     <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Nyb-Wo-Uez">
-                    <rect key="frame" x="112" y="627" width="151" height="30"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nyb-Wo-Uez">
+                    <rect key="frame" x="112" y="627" width="151" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="115-uL-jjD"/>
+                        <constraint firstAttribute="width" constant="151" id="64m-wK-F0r"/>
+                    </constraints>
                     <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
                     <state key="normal" title="Done &gt;">
                         <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -67,9 +89,33 @@
                         <action selector="btnBackClicked:" destination="-1" eventType="touchUpInside" id="xvb-gX-onL"/>
                     </connections>
                 </button>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMs-Mx-A1i">
+                    <rect key="frame" x="0.0" y="65" width="375" height="558"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="UkD-Qt-Ats"/>
+                    </connections>
+                </webView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <point key="canvasLocation" x="259" y="273"/>
+            <constraints>
+                <constraint firstItem="Nyb-Wo-Uez" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3AW-Dv-waP"/>
+                <constraint firstItem="IMs-Mx-A1i" firstAttribute="trailing" secondItem="gFB-tD-rVU" secondAttribute="trailing" id="650-sE-GUH"/>
+                <constraint firstItem="IMs-Mx-A1i" firstAttribute="top" secondItem="G9c-5j-nfh" secondAttribute="bottom" constant="1" id="AjX-Pg-pw6"/>
+                <constraint firstItem="G9c-5j-nfh" firstAttribute="top" secondItem="gFB-tD-rVU" secondAttribute="top" priority="750" id="DSu-un-SDw"/>
+                <constraint firstItem="G9c-5j-nfh" firstAttribute="leading" secondItem="gFB-tD-rVU" secondAttribute="leading" id="FuB-pZ-lCb"/>
+                <constraint firstItem="Nyb-Wo-Uez" firstAttribute="bottom" secondItem="gFB-tD-rVU" secondAttribute="bottom" id="Kgz-ze-E32"/>
+                <constraint firstItem="G9c-5j-nfh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="VA9-Ie-7zE"/>
+                <constraint firstAttribute="trailing" secondItem="hxC-Zx-ZZW" secondAttribute="trailing" id="Wkv-JM-lMq"/>
+                <constraint firstItem="hxC-Zx-ZZW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZkG-Zc-xEQ"/>
+                <constraint firstItem="Nyb-Wo-Uez" firstAttribute="top" secondItem="hxC-Zx-ZZW" secondAttribute="bottom" id="ZyY-K6-TdP"/>
+                <constraint firstItem="G9c-5j-nfh" firstAttribute="trailing" secondItem="gFB-tD-rVU" secondAttribute="trailing" id="gko-kw-g3t"/>
+                <constraint firstItem="hxC-Zx-ZZW" firstAttribute="top" secondItem="IMs-Mx-A1i" secondAttribute="bottom" constant="3" id="lGR-x7-0CA"/>
+                <constraint firstItem="IMs-Mx-A1i" firstAttribute="leading" secondItem="gFB-tD-rVU" secondAttribute="leading" id="yvO-rX-mnJ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="gFB-tD-rVU"/>
+            <point key="canvasLocation" x="258.5" y="273"/>
         </view>
     </objects>
     <resources>
@@ -77,9 +123,4 @@
         <image name="headerDevider" width="1" height="1"/>
         <image name="logo" width="81" height="17"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
-    </simulatedMetricsContainer>
 </document>

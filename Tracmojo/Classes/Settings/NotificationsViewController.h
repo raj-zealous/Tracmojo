@@ -13,6 +13,7 @@
 @property(nonatomic,retain) IBOutlet UITableView *tbl_obj;
 @property(nonatomic,retain) IBOutlet TPKeyboardAvoidingScrollView *scrl_obj;
 @property(nonatomic,retain) IBOutlet UITextField *txtfld_time;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *tableviewHightConts;
 
 
 

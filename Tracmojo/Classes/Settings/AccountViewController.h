@@ -12,6 +12,7 @@
 
 
 @property(nonatomic,retain) IBOutlet UILabel *lbl1,*lbl2,*phnlbl;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *lblPasswordHightCOnstant;
 
 @property(nonatomic,retain) IBOutlet UIImageView *img1,*img2;
 @property(nonatomic,retain) IBOutlet UIButton *send_btn;

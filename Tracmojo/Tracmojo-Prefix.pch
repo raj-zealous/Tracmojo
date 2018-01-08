@@ -20,10 +20,10 @@
 //#define API_PATH @"http://192.168.1.101/tracmojo/web/api/"
 #pragma Amazon
 
-#define API_PATH @"http://54.153.145.178/backend/web/api/"
+ // #define API_PATH @"http://54.153.145.178/backend/web/api/"
 
 // final 2 url Ritesh
-//#define API_PATH @"http://opensource.zealousys.com/backend/web/api/"
+#define API_PATH @"http://opensource.zealousys.com/backend/web/api/"
 //#define API_PATH @"http://app.tracmojo.com/backend/web/api/"
 
 #define paased_color [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:0.7]

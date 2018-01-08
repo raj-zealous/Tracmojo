@@ -45,9 +45,6 @@
     {
         if (DELEGATE.ischkFollowers)
         {
-
-            
-            
             NSString  *strparticipetedcount = [DELEGATE.dic_edittrac objectForKey:@"participant_count"];
             
             inviteFollowerCount = [[DELEGATE.dic_edittrac  objectForKey:@"Participants"] count];
@@ -81,7 +78,12 @@
     
     
     table_invitelist.hidden=YES;
-    _mailview.frame=CGRectMake(0, lbl_nofollower.frame.origin.y + lbl_nofollower.frame.size.height,self.view.frame.size.width, 108);
+    if (inviteFollowerCount ==  0)
+    {
+        _mailviewtopCont.constant  =  -80;
+    }
+    
+   // _mailview.frame=CGRectMake(0, lbl_nofollower.frame.origin.y + lbl_nofollower.frame.size.height,self.view.frame.size.width, 108);
     
     
     lbl_Add.text=@"";
@@ -146,8 +148,8 @@
             else
             {
                 lbl_nofollower.hidden=YES;
-                _mailview.frame=CGRectMake(_mailview.frame.origin.x, table_invitelist.frame.origin.y+table_invitelist.frame.size.height, [UIScreen mainScreen].applicationFrame.size.width, _mailview.frame.size.height);
-                [scroll_invite addSubview:_mailview];
+               // _mailview.frame=CGRectMake(_mailview.frame.origin.x, table_invitelist.frame.origin.y+table_invitelist.frame.size.height, [UIScreen mainScreen].applicationFrame.size.width, _mailview.frame.size.height);
+              //  [scroll_invite addSubview:_mailview];
                 table_invitelist.hidden=NO;
                 [table_invitelist reloadData];
                 
@@ -500,6 +502,7 @@
                 {
                     lbl_nofollower.hidden=NO;
                     table_invitelist.hidden=YES;
+                    
                     _mailview.frame=CGRectMake(_mailview.frame.origin.x, lbl_nofollower.frame.origin.y + lbl_nofollower.frame.size.height, [UIScreen mainScreen].applicationFrame.size.width, _mailview.frame.size.height);
                     [scroll_invite addSubview:_mailview];
                 }

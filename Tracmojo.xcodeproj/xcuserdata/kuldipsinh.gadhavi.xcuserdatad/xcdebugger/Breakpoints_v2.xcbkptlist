@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tracmojo/Classes/Trac rate/tracrate.m"
-            timestampString = "528297392.50545"
+            timestampString = "535021206.773769"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "251"
+            endingLineNumber = "251"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tracmojo/Classes/Comment/CommentsViewController.m"
-            timestampString = "528294692.073041"
+            filePath = "Tracmojo/Classes/Trac rate/tracrate.m"
+            timestampString = "535021206.776528"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "-btnChek2:"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tracmojo/Classes/Comment/CommentsViewController.m"
-            timestampString = "528294693.120663"
+            filePath = "Tracmojo/Classes/Trac rate/tracrate.m"
+            timestampString = "535021206.777724"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "-btnChek2:"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
+            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,27 +57,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tracmojo/Classes/Group Trac/GroupTrac.m"
-            timestampString = "528615234.323432"
+            filePath = "Tracmojo/Classes/Trac rate/tracrate.m"
+            timestampString = "535021206.778428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "617"
-            endingLineNumber = "617">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tracmojo/RESOURCES/Models/ModelClass.m"
-            timestampString = "528900648.768597"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "588"
-            endingLineNumber = "588"
-            landmarkName = "-Updategroup:name:gole:idea_id:rate_word_id:cust_rate_word1:cust_rate_word2:cust_rate_word3:cust_rate_word4:cust_rate_word5:rating_frequency:rating_day:finish_date:invited_emails_participants:invited_emails_followers:trac_id:selector:"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -87,13 +73,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tracmojo/RESOURCES/Models/ModelClass.m"
-            timestampString = "528959297.695368"
+            filePath = "Tracmojo/Classes/Trac rate/tracrate.m"
+            timestampString = "535021206.779368"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "587"
-            endingLineNumber = "587"
-            landmarkName = "-Updategroup:name:gole:idea_id:rate_word_id:cust_rate_word1:cust_rate_word2:cust_rate_word3:cust_rate_word4:cust_rate_word5:rating_frequency:rating_day:finish_date:invited_emails_participants:invited_emails_followers:trac_id:selector:"
+            startingLineNumber = "292"
+            endingLineNumber = "292"
+            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -103,13 +89,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tracmojo/RESOURCES/Models/ModelClass.m"
-            timestampString = "529397455.96595"
+            filePath = "Tracmojo/Classes/Trac rate/tracrate.m"
+            timestampString = "535021206.780401"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "275"
-            endingLineNumber = "275"
-            landmarkName = "-Email:Password:Mobile:First_name:Last_name:Device_id:Device_type:selector:"
+            startingLineNumber = "340"
+            endingLineNumber = "340"
+            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -119,13 +105,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tracmojo/RESOURCES/Models/ModelClass.m"
-            timestampString = "529397458.221921"
+            filePath = "Tracmojo/Classes/Trac rate/tracrate.m"
+            timestampString = "535021206.783817"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "257"
-            endingLineNumber = "257"
-            landmarkName = "-Email:Password:Mobile:First_name:Last_name:Device_id:Device_type:selector:"
+            startingLineNumber = "315"
+            endingLineNumber = "315"
+            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -135,29 +121,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tracmojo/RESOURCES/Models/ModelClass.m"
-            timestampString = "529397786.36596"
+            filePath = "Tracmojo/Classes/Trac rate/tracrate.m"
+            timestampString = "535021206.784895"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "278"
-            endingLineNumber = "278"
-            landmarkName = "-Email:Password:Mobile:First_name:Last_name:Device_id:Device_type:selector:"
+            startingLineNumber = "368"
+            endingLineNumber = "368"
+            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Tracmojo/Classes/Register/UserRegisterForm.m"
-            timestampString = "529410688.399856"
+            filePath = "Tracmojo/Classes/Manage/ManageViewController.m"
+            timestampString = "536677745.775675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "461"
-            endingLineNumber = "461"
-            landmarkName = "-btnSignupCLicked:"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "-viewWillAppear:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
