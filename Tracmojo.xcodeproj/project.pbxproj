@@ -2364,7 +2364,7 @@
 				PRODUCT_NAME = tracmojo;
 				PROVISIONING_PROFILE = "04fac50a-45ce-4ee4-a93c-379c3c0b3f25";
 				PROVISIONING_PROFILE_SPECIFIER = com.bluewave.Tracmojo_Store6oct;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kuldipsinh.gadhavi/Documents/Tracmojo/Header-SwiftBridge.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/Header-SwiftBridge.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7 armv7s";
@@ -2401,7 +2401,7 @@
 				PRODUCT_NAME = tracmojo;
 				PROVISIONING_PROFILE = "04fac50a-45ce-4ee4-a93c-379c3c0b3f25";
 				PROVISIONING_PROFILE_SPECIFIER = com.bluewave.Tracmojo_Store6oct;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/kuldipsinh.gadhavi/Documents/Tracmojo/Header-SwiftBridge.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/Header-SwiftBridge.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7 armv7s";
